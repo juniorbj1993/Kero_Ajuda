@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {DetalheservicoPage} from '../detalheservico/detalheservico';
+
 /**
- * Generated class for the ServicoPage page.
+ * Generated class for the DetalheservicoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,23 +10,18 @@ import {DetalheservicoPage} from '../detalheservico/detalheservico';
 
 @IonicPage()
 @Component({
-  selector: 'page-servico',
-  templateUrl: 'servico.html',
+  selector: 'page-detalheservico',
+  templateUrl: 'detalheservico.html',
 })
-export class ServicoPage {
+export class DetalheservicoPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
-
+    titulo = this.navParams.get('detalheservico');
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ServicoPage');
-  }
-  irParaPagDetalheServico(nome:String){
-    this.navCtrl.push(DetalheservicoPage,{
-      detalheservico: nome
-    });
+    console.log('ionViewDidLoad DetalheservicoPage');
   }
 
 }

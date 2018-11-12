@@ -15,5 +15,4 @@ export class HomePage {
   irParaPagServico(){
     this.navCtrl.push(ServicoPage);
   }
-
 }
