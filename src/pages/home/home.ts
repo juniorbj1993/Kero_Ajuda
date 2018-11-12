@@ -1,5 +1,7 @@
+import { ServicoPage } from './../servico/servico';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-home',
@@ -9,6 +11,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {
 
+  }
+  irParaPagServico(){
+    this.navCtrl.push(ServicoPage);
   }
 
 }
