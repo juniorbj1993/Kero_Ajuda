@@ -5,7 +5,7 @@ page-home {
     ion-card {
       position: relative;
       text-align: center;
-      margin-top: 10%;
+      margin-top: 20%;
 
       border-radius: 20px;
     }
@@ -27,13 +27,23 @@ page-home {
       color: #fff;
     }
     button{
-      margin-bottom: 10%;
+      margin-top: 5%;
       border-radius: 20px;
     }
     .button-inner{
       color: #fbc01a;
     }
-
+    img{
+      margin-top: 35px;
+      margin-bottom: 35px;
+    }
+    .content-md{
+      color: #303975;
+    }
+    .bt2{
+      background-color: #2d860a;
+    }
   }
+
 
 }
