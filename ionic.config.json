@@ -1,5 +1,7 @@
 {
   "name": "Kero_Ajuda",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
