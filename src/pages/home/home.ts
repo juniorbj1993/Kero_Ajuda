@@ -12,7 +12,11 @@ export class HomePage {
   constructor(public navCtrl: NavController) {
 
   }
+
   irParaPagServico(){
     this.navCtrl.push(ServicoPage);
+  }
+  cadastrar(){
+    console.log("testando cadastrar");
   }
 }

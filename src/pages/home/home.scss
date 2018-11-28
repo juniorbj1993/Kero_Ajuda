@@ -26,22 +26,33 @@ page-home {
       width: 100%;
       color: #fff;
     }
-    button{
-      margin-top: 5%;
-      border-radius: 20px;
+
+    .buttonlogin {
+      padding-left: 15px;
+      padding-right: 15px;
     }
-    .button-inner{
-      color: #fbc01a;
+    .buttoncadastro{
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: center;
     }
     img{
-      margin-top: 35px;
-      margin-bottom: 35px;
+      margin-top: 5px;
+      margin-bottom: 5px;
     }
     .content-md{
-      color: #303975;
+      color: #337ba5;
     }
     .bt2{
-      background-color: #2d860a;
+      background-color: #c0c0c0;
+    }
+    ion-list{
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 40px;
+    }
+    .botãocadastrar{
+      color: black !important;
     }
   }
 

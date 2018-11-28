@@ -1,28 +1,35 @@
 <ion-header>
-  <!-- <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar> -->
+
 </ion-header>
 
 <ion-content>
     <ion-content class="card-background-page">
         <ion-card>
           <img src="../../assets/imgs/logo_kero_ajuda.jpeg"/>
-
         </ion-card>
         <ion-grid>
-            <ion-row>
+            <ion-list>
+                <ion-item>
+                  <ion-input type="text" placeholder="Email"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                  <ion-input type="password" placeholder="Senha"></ion-input>
+                </ion-item>
+
+            </ion-list>
+            <ion-row class="buttonlogin" >
               <ion-col col-12 style="text-align: center">
-                  <button ion-button primary large center (click)="irParaPagServico()" >Solicite!</button>
-              </ion-col>
-              <ion-col col-12 style="text-align: center">
-                  <button ion-button class="bt2" secondary center>Sobre</button>
+                  <button  ion-button full>Login</button>
               </ion-col>
             </ion-row>
-          </ion-grid>
+            <ion-row class="buttoncadastro">
+                <ion-col col-12>
+                  <p> Ainda Não é cadastrado? <a (click)="cadastrar()">Cadastre-se</a></p>
+                </ion-col>
+
+            </ion-row>
+        </ion-grid>
 
     </ion-content>
     <ion-footer>
