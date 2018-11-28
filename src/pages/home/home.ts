@@ -1,6 +1,6 @@
-import { ServicoPage } from './../servico/servico';
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { CadastrarPage } from '../cadastrar/cadastrar';
 
 
 @Component({
@@ -13,10 +13,7 @@ export class HomePage {
 
   }
 
-  irParaPagServico(){
-    this.navCtrl.push(ServicoPage);
-  }
   cadastrar(){
-    console.log("testando cadastrar");
+    this.navCtrl.push(CadastrarPage);
   }
 }
