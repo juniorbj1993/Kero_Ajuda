@@ -13,7 +13,4 @@ export class HomePage {
 
   }
 
-  cadastrar(){
-    this.navCtrl.push(CadastrarPage);
-  }
 }
