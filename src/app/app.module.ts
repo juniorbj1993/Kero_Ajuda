@@ -1,8 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-// import { AngularFireModule } from '@angular/fire';
-// import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import {environment} from '../environments/environment';
+
 
 
 import { MyApp } from './app.component';
@@ -31,7 +32,7 @@ import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    // AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase)
 
   ],
   bootstrap: [IonicApp],
