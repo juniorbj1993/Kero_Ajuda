@@ -4,9 +4,12 @@
 
 <ion-content>
     <ion-content class="card-background-page">
-        <ion-card>
-          <img src="../../assets/imgs/logo_kero_ajuda.jpeg"/>
-        </ion-card>
+
+          <ion-row class="logo">
+            <ion-col col-12>
+                <img  src="../../assets/imgs/logo_kero_ajuda.png"/>
+            </ion-col>
+          </ion-row>
         <ion-grid>
             <ion-list>
                 <ion-item>
@@ -25,16 +28,13 @@
             </ion-row>
             <ion-row class="buttoncadastro">
                 <ion-col col-12>
-                  <p> Ainda não é cadastrado? <a (click)="cadastrar()">Cadastre-se</a></p>
+                  <p> Ainda não é cadastrado? <a (click)="cadastrarusuario()">Cadastre-se.</a></p>
                 </ion-col>
-
+                <ion-col col-12>
+                    <p><a (click)="cadastrarpds()">Sou prestador de Serviços.</a></p>
+                  </ion-col>
             </ion-row>
         </ion-grid>
 
     </ion-content>
-    <ion-footer>
-      <ion-toolbar style="text-align: center; color: #303975">
-        <p>Copyright © 2018 Kero Ajuda</p>
-      </ion-toolbar>
-    </ion-footer>
 </ion-content>
