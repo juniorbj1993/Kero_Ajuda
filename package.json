@@ -16,7 +16,6 @@
     "@angular/compiler": "5.2.11",
     "@angular/compiler-cli": "5.2.11",
     "@angular/core": "5.2.11",
-    "@angular/fire": "^5.1.0",
     "@angular/forms": "5.2.11",
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
@@ -27,11 +26,14 @@
     "@ionic/storage": "2.2.0",
     "grpc": "^1.17.0-pre1",
     "grpc-errors": "^1.1.1",
+    "hoek": "^6.1.1",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "joi": "^14.3.0",
     "node-gyp": "^3.6.1",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
+    "topo": "^3.0.3",
     "zone.js": "0.8.26"
   },
   "devDependencies": {
