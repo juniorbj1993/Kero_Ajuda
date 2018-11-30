@@ -1,5 +1,4 @@
-export class Servidores{
-  public id:number;
+export class pds{
   public img:string;
   public nome:string;
   public telefone: string;
@@ -16,7 +15,6 @@ export class Servidores{
   public rua:string;
   public numero:string;
 
-  public curriculos:string;
   public estrelas:Array<number>;
   public nome_pai:string;
   public nome_mae:string;
@@ -24,6 +22,26 @@ export class Servidores{
   public datadenascimento:string;
   public nacionalidade:string;
   public naturalidade:string;
+}
 
+
+export class usuario{
+  public img:object;
+  public nome:string;
+  public telefone: string;
+  public email: string;
+  public cpf:string;
+  public datadenascimento:string;
+  public nacionalidade:string;
+  public naturalidade:string;
+
+
+  public estado: string;
+  public cidade: string;
+  public bairro:string;
+  public rua:string;
+  public numero:string;
+
+  public estrelas:Array<number>;
 
 }

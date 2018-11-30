@@ -1,29 +1,30 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicStorageModule } from '@ionic/storage';
+import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
-import {environment} from '../environments/environment';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {usuario} from '../users.model';
+import { AngularFireDatabase } from 'angularfire2/database';
+
+
 
 
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
-import { ServicoPage } from '../pages/servico/servico';
-import { DetalheservicoPage } from '../pages/detalheservico/detalheservico';
 import { LoginPage } from './../pages/login/login';
-
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CadastrousuarioPage } from '../pages/cadastrousuario/cadastrousuario';
 import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 
+
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    ServicoPage,
-    DetalheservicoPage,
     LoginPage,
     CadastrousuarioPage,
     CadastroPdsPage
@@ -32,15 +33,15 @@ import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    IonicStorageModule.forRoot()
+
+
 
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    ServicoPage,
-    DetalheservicoPage,
     LoginPage,
     CadastrousuarioPage,
     CadastroPdsPage
@@ -48,7 +49,10 @@ import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AngularFireAuth,
+    usuario,
+    AngularFireDatabase
   ]
 })
 export class AppModule {}

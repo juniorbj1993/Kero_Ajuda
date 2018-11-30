@@ -11,29 +11,31 @@
             </ion-col>
           </ion-row>
         <ion-grid>
-            <ion-list>
-                <ion-item>
-                  <ion-input type="text" placeholder="Email"></ion-input>
-                </ion-item>
+          <form [formGroup]="loginForm" (ngSubmit)="login()" >
+              <ion-list>
+                  <ion-item>
+                    <ion-input type="text" placeholder="Email" formControlName="email"></ion-input>
+                  </ion-item>
 
-                <ion-item>
-                  <ion-input type="password" placeholder="Senha"></ion-input>
-                </ion-item>
+                  <ion-item>
+                    <ion-input type="password" placeholder="Senha" formControlName="senha"></ion-input>
+                  </ion-item>
 
-            </ion-list>
-            <ion-row class="buttonlogin" >
-              <ion-col col-12 style="text-align: center">
-                  <button  ion-button full>Login</button>
-              </ion-col>
-            </ion-row>
-            <ion-row class="buttoncadastro">
-                <ion-col col-12>
-                  <p> Ainda não é cadastrado? <a (click)="cadastrarusuario()">Cadastre-se.</a></p>
+              </ion-list>
+              <ion-row class="buttonlogin" >
+                <ion-col col-12 style="text-align: center">
+                    <button type="submit" ion-button full [disabled]="loginForm.invalid">Login</button>
                 </ion-col>
-                <ion-col col-12>
-                    <p><a (click)="cadastrarpds()">Sou prestador de Serviços.</a></p>
-                  </ion-col>
-            </ion-row>
+              </ion-row>
+          </form>
+          <ion-row class="buttoncadastro">
+              <ion-col col-12>
+                <p> Ainda não é cadastrado? <a (click)="cadastrarusuario()">Cadastre-se.</a></p>
+              </ion-col>
+              <ion-col col-12>
+                  <p><a (click)="cadastrarpds()">Sou prestador de Serviços.</a></p>
+                </ion-col>
+          </ion-row>
         </ion-grid>
 
     </ion-content>
