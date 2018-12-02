@@ -1,4 +1,4 @@
-import * as firebase from 'firebase';
+
 import { pds, usuario } from './users.model';
 
 

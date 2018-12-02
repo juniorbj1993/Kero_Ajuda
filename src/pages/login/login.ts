@@ -1,4 +1,4 @@
-import { usuario } from './../../users.model';
+import { ConfiguracoesPage } from './../configuracoes/configuracoes';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -7,6 +7,7 @@ import { CadastrousuarioPage } from './../cadastrousuario/cadastrousuario';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AngularFireAuth} from 'angularfire2/auth';
+
 
 @IonicPage()
 @Component({
@@ -39,7 +40,7 @@ export class LoginPage {
       .then((resposta)=>{
         this.storage.set('userId',resposta.uid)
           .then(()=>{
-            this.navCtrl.setRoot('HomePage');
+            this.navCtrl.setRoot(ConfiguracoesPage);
           })
       })
       .catch((erro)=>{
@@ -50,7 +51,6 @@ export class LoginPage {
             position: 'top'
             });
             toast.present();
-            console.log(erro.code)
         }
       })
 
@@ -62,5 +62,7 @@ export class LoginPage {
   cadastrarpds(){
     this.navCtrl.push(CadastroPdsPage);
   }
+
+
 
 }

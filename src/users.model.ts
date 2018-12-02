@@ -28,6 +28,7 @@ export class pds{
 export class usuario{
   public img:object;
   public nome:string;
+  public sobrenome:string;
   public telefone: string;
   public email: string;
   public cpf:string;

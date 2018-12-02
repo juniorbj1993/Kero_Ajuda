@@ -1,0 +1,29 @@
+
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Configurações</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <button ion-item (click)="openHomePage()">
+        Home
+      </button>
+      <button ion-item (click)="openContactPage()">
+        Contato Kero Ajuda
+      </button>
+      <button ion-item (click)="openAboutPage()">
+        Sobre Nós
+      </button>
+      <button ion-item (click)="meusDadosPage()">
+        Minha Conta
+      </button>
+      <button ion-item  style="color: red"  (click)="logout()">
+        Logout
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav id="nav" #content [root]="rootPage"></ion-nav>

@@ -7,9 +7,10 @@ import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
-import { Storage } from '@ionic/storage';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {usuario} from '../../users.model';
+
+
 
 
 
@@ -21,8 +22,6 @@ import {usuario} from '../../users.model';
   templateUrl: 'cadastrousuario.html',
 })
 export class CadastrousuarioPage {
-  private idUser: string
-
 
   registerform: FormGroup;
 
@@ -33,23 +32,23 @@ export class CadastrousuarioPage {
     public toastCtrl: ToastController,
     public alertCtrl: AlertController,
     public afAuth: AngularFireAuth,
-    private storage: Storage,
     public db: AngularFireDatabase,
-    private dadosUser: usuario,
+    private dadosUser: usuario
 
     ) {
     this.registerform = this.formbuilder.group({
       nome: [null,[Validators.required,Validators.minLength(6)]],
+      sobrenome: [null,[Validators.required,Validators.minLength(6)]],
       telefone: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
       cpf: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
       nacionalidade: [null,[Validators.required,Validators.minLength(5)]],
       naturalidade: [null,[Validators.required,Validators.minLength(5)]],
 
-      estado: [null,[Validators.required,Validators.minLength(2)]],
-      cidade: [null,[Validators.required,Validators.minLength(2)]],
-      rua: [null,[Validators.required,Validators.minLength(3)]],
-      bairro: [null,[Validators.required,Validators.minLength(2)]],
-      numero: [null,[Validators.required,Validators.minLength(1)]],
+      estado: [null,[Validators.required]],
+      cidade: [null,[Validators.required]],
+      rua: [null,[Validators.required]],
+      bairro: [null,[Validators.required]],
+      numero: [null,[Validators.required]],
       email: [null,[Validators.required,Validators.email]],
       senha: [null,[Validators.required,Validators.minLength(8)]],
       confirmarsenha: [null,[Validators.required,Validators.minLength(8),ValidateConfirmPassword]]
@@ -68,6 +67,7 @@ export class CadastrousuarioPage {
 
   criarObjeto(){
     this.dadosUser.nome = this.registerform.value.nome;
+    this.dadosUser.sobrenome = this.registerform.value.sobrenome;
     this.dadosUser.telefone = this.registerform.value.telefone;
     this.dadosUser.cpf = this.registerform.value.cpf;
     this.dadosUser.nacionalidade = this.registerform.value.nacionalidade;
@@ -83,18 +83,10 @@ export class CadastrousuarioPage {
 
 
   registerUsers(){
-
     this.criarObjeto()
     this.afAuth.auth.createUserWithEmailAndPassword(this.registerform.value.email, this.registerform.value.senha)
       .then((resposta)=>{
-        this.storage.set('userId',resposta.uid)
-        this.storage.get('userId').
-          then((valor)=>{
-            this.idUser = valor
-          })
-
-        .then((resposta)=>{
-          this.db.database.ref('/UserData').child(this.idUser).push(this.dadosUser)
+          this.db.database.ref('/UserData').child(resposta.uid).push(this.dadosUser)
           .then(()=>{
             const alert = this.alertCtrl.create({
               title: 'Bem vindo ao Kero Ajuda, '+ this.registerform.value.nome,
@@ -104,10 +96,7 @@ export class CadastrousuarioPage {
             alert.present();
             this.navCtrl.pop();
           })
-
         })
-
-      })
       .catch((error)=>{
         if (error.code == 'auth/email-already-in-use' ) {
             const toast = this.toastCtrl.create({
