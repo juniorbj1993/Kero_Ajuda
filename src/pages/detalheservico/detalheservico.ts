@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {ServicePds} from '../../auth.service';
-import {pds} from '../../users.model';
+// import {ServicePds} from '../../auth.service';
+// import {pds} from '../../users.model';
 
 @IonicPage()
 @Component({
   selector: 'page-detalheservico',
   templateUrl: 'detalheservico.html',
-  providers: [ServicePds]
+  // providers: [ServicePds]
 })
 export class DetalheservicoPage {
-  public prestador:pds[]
+  // public prestador:pds[]
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private servicepds: ServicePds ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams ) {
 
   }
   titulo = this.navParams.get('detalheservico');

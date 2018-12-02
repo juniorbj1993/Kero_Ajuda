@@ -1,5 +1,5 @@
 //modulos
-// import { ConfiguracoesPageModule } from './../pages/configuracoes/configuracoes.module';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
@@ -22,7 +22,7 @@ import { LoginPage } from './../pages/login/login';
 import { CadastrousuarioPage } from '../pages/cadastrousuario/cadastrousuario';
 import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 import { HomePage } from '../pages/home/home';
-import {ConfiguracoesPage} from '../pages/configuracoes/configuracoes';
+
 
 //outros
 import { StatusBar } from '@ionic-native/status-bar';
@@ -45,7 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AngularFireModule.initializeApp(environment.firebase),
     IonicStorageModule.forRoot(),
     HomePageModule
-    // ConfiguracoesPageModule
+
 
 
   ],
@@ -56,7 +56,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CadastrousuarioPage,
     CadastroPdsPage,
     HomePage
-    // ConfiguracoesPage
+
 
   ],
   providers: [
