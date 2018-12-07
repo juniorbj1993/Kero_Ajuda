@@ -1,0 +1,70 @@
+page-login-pds {
+  .card-background-page {
+    ion-card {
+      position: relative;
+      text-align: center;
+      margin-top: 20%;
+
+      border-radius: 20px;
+    }
+
+    .card-title {
+      position: absolute;
+      top: 36%;
+      font-size: 2.0em;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    img{
+      width: 100%;
+      padding-left: 90px;
+      padding-right: 90px;
+    }
+
+    .card-subtitle {
+      font-size: 1.0em;
+      position: absolute;
+      top: 52%;
+      width: 100%;
+      color: #fff;
+    }
+
+    .buttonlogin {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-bottom: 30px;
+
+    }
+    .buttoncadastro{
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #6e6e6e;
+    }
+    .logo{
+      margin-top: 10%;
+      align-items: center;
+    }
+    .content-md{
+      color: #337ba5;
+    }
+    .bt2{
+      background-color: #c0c0c0;
+    }
+    ion-list{
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: 20px;
+    }
+    .botãocadastrar{
+      color: black !important;
+    }
+
+
+
+
+  }
+}

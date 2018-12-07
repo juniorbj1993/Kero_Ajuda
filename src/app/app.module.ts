@@ -7,10 +7,12 @@ import { IonicStorageModule } from '@ionic/storage';
 import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {usuario} from '../users.model';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePageModule } from '../pages/home/home.module';
 
+//models
+import {usuario} from '../users.model';
+import {pds} from '../users.model';
 //serviços
 
 
@@ -22,6 +24,8 @@ import { LoginPage } from './../pages/login/login';
 import { CadastrousuarioPage } from '../pages/cadastrousuario/cadastrousuario';
 import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 import { HomePage } from '../pages/home/home';
+import { LoginPdsPage } from './../pages/login-pds/login-pds';
+
 
 
 //outros
@@ -37,7 +41,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     LoginPage,
     CadastrousuarioPage,
-    CadastroPdsPage
+    CadastroPdsPage,
+    LoginPdsPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     CadastrousuarioPage,
     CadastroPdsPage,
-    HomePage
+    HomePage,
+    LoginPdsPage
 
 
   ],
@@ -66,7 +72,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AngularFireAuth,
     AngularFireModule,
     usuario,
-    AngularFireDatabase
+    AngularFireDatabase,
+    pds
   ]
 })
 export class AppModule {}

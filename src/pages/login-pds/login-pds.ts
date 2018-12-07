@@ -2,19 +2,19 @@ import { ConfiguracoesPage } from './../configuracoes/configuracoes';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CadastrousuarioPage } from './../cadastrousuario/cadastrousuario';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AngularFireAuth} from 'angularfire2/auth';
-import { LoginPdsPage } from '../login-pds/login-pds';
+import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
+
 
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html',
+  selector: 'page-login-pds',
+  templateUrl: 'login-pds.html',
 })
-export class LoginPage {
+export class LoginPdsPage {
 
   loginForm: FormGroup;
 
@@ -56,13 +56,11 @@ export class LoginPage {
 
 
   }
-  cadastrarusuario(){
-    this.navCtrl.push(CadastrousuarioPage);
+  logarUsuario(){
+    this.navCtrl.pop();
   }
   cadastrarpds(){
-    this.navCtrl.push(LoginPdsPage);
+    this.navCtrl.push(CadastroPdsPage);
   }
-
-
 
 }
