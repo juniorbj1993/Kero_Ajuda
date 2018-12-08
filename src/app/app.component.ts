@@ -48,7 +48,6 @@ export class MyApp {
     .catch(()=>{
       this.rootPage = LoginPage;
     })
-
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
