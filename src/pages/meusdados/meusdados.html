@@ -1,18 +1,38 @@
-<!--
-  Generated template for the MeusdadosPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>meusdados</ion-title>
-  </ion-navbar>
-
+    <ion-navbar>
+        <ion-navbar>
+            <ion-title>Meus Dados</ion-title>
+        </ion-navbar>
+      </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
+    <ion-card >
+        <ion-card-header>
+          Meus dados
+        </ion-card-header>
+        <ion-card-content *ngFor="let U of listadousuario">
+          <h2>Nome completo:</h2>
+          <h4>{{U.nome}} {{U.sobrenome}}</h4>
+          <h2>Telefone:</h2>
+          <h4>{{U.telefone}}</h4>
+          <h2>CPF:</h2>
+          <h4>{{U.cpf}}</h4>
+          <h2>RG:</h2>
+          <h4>{{U.rg}}</h4>
+          <h2>Data de nascimento:</h2>
+          <h4>{{U.datadenascimento}}</h4>
+          <h2>Email:</h2>
+          <h4>{{U.email}}</h4>
+          <h2>Função:</h2>
+          <h4>{{U.funcao}}</h4>
+          <h2>Endereço:</h2>
+          <h4>{{U.rua}}, {{U.numero}}, {{U.bairro}}, {{U.cidade}} - {{U.estado}}</h4>
+          <h2>Nacionalidade / Naturalidade:</h2>
+          <h4>{{U.nacionalidade}} / {{U.naturalidade}}</h4>
+
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

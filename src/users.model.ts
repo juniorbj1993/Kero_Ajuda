@@ -4,7 +4,6 @@ export class pds{
   public sobrenome:string;
   public telefone: string;
   public email: string;
-  public categoria: string;
   public funcao:string;
   public cpf:string;
   public rg:string;

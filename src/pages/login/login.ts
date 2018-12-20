@@ -6,7 +6,7 @@ import { CadastrousuarioPage } from './../cadastrousuario/cadastrousuario';
 import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AngularFireAuth} from 'angularfire2/auth';
-import { LoginPdsPage } from '../login-pds/login-pds';
+import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
 
 
 @IonicPage()
@@ -14,6 +14,7 @@ import { LoginPdsPage } from '../login-pds/login-pds';
   selector: 'page-login',
   templateUrl: 'login.html',
 })
+
 export class LoginPage {
 
   loginForm: FormGroup;
@@ -36,6 +37,7 @@ export class LoginPage {
   ionViewDidLoad() {
   }
   login(){
+
     this.afAuth.auth.signInWithEmailAndPassword(this.loginForm.value.email,this.loginForm.value.senha)
       .then((resposta)=>{
         this.storage.set('userId',resposta.uid)
@@ -60,7 +62,7 @@ export class LoginPage {
     this.navCtrl.push(CadastrousuarioPage);
   }
   cadastrarpds(){
-    this.navCtrl.push(LoginPdsPage);
+    this.navCtrl.push(CadastroPdsPage);
   }
 
 

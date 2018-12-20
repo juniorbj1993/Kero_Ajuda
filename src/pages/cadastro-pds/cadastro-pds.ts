@@ -9,14 +9,9 @@ import { AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {pds} from '../../users.model';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 
-/**
- * Generated class for the CadastroPdsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -26,6 +21,7 @@ import {pds} from '../../users.model';
 export class CadastroPdsPage {
 
   registerform: FormGroup;
+  photo: string = '';
 
   constructor(
     public navCtrl: NavController,
@@ -35,19 +31,20 @@ export class CadastroPdsPage {
     public alertCtrl: AlertController,
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
-    private dadosPDS: pds
+    private dadosPDS: pds,
+    private camera: Camera
 
     ) {
     this.registerform = this.formbuilder.group({
-      nome: [null,[Validators.required,Validators.minLength(6)]],
+      nome: [null,[Validators.required,Validators.minLength(2)]],
       sobrenome: [null,[Validators.required,Validators.minLength(6)]],
       telefone: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
       cpf: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
       rg: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
       datadenascimento:[null,[Validators.required,Validators.minLength(5)]],
-      nacionalidade: [null,[Validators.required,Validators.minLength(5)]],
-      naturalidade: [null,[Validators.required,Validators.minLength(5)]],
-      funcao:[null,[Validators.required,Validators.minLength(5)]],
+      nacionalidade: [null,[Validators.required,Validators.minLength(1)]],
+      naturalidade: [null,[Validators.required,Validators.minLength(1)]],
+      funcao:[null,[Validators.required,Validators.minLength(1)]],
 
       estado: [null,[Validators.required]],
       cidade: [null,[Validators.required]],
@@ -70,6 +67,32 @@ export class CadastroPdsPage {
 
   }
 
+  takePicture() {
+    this.photo = '';
+
+    const options: CameraOptions = {
+      quality: 100,
+      destinationType: this.camera.DestinationType.DATA_URL,
+      encodingType: this.camera.EncodingType.JPEG,
+      mediaType: this.camera.MediaType.PICTURE,
+      allowEdit: true,
+      targetWidth: 100,
+      targetHeight: 100
+    }
+
+    this.camera.getPicture(options)
+      .then((imageData) => {
+        let base64image = 'data:image/jpeg;base64,' + imageData;
+        this.photo = base64image;
+
+      }, (error) => {
+        console.error(error);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
   criarObjeto(){
     this.dadosPDS.nome = this.registerform.value.nome;
     this.dadosPDS.sobrenome = this.registerform.value.sobrenome;
@@ -86,6 +109,7 @@ export class CadastroPdsPage {
     this.dadosPDS.numero = this.registerform.value.numero;
     this.dadosPDS.email = this.registerform.value.email;
     this.dadosPDS.funcao = this.registerform.value.funcao;
+    this.dadosPDS.estrelas = {uma: 0, duas: 0, tres: 0, quatro: 0, cinco: 0};
   }
 
 

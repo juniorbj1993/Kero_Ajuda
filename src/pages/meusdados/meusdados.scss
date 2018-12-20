@@ -1,3 +1,28 @@
 page-meusdados {
-
+  ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    text-align: center;
+  }
+  .bar-button-default-md{
+    color: white;
+  }
+  .card-md h2{
+    color: black;
+  }
+  .card-md h4{
+    color:#123879;
+  }
+  .card-header-md{
+    font-size: 2.6rem;
+    color: #000000;
+    text-align: center;
+  }
+  .classificacao{
+    margin-top: 40px;
+    padding: 10px;
+  }
 }

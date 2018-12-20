@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +10,8 @@ import { AngularFireModule } from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePageModule } from '../pages/home/home.module';
+import { HomepdsPageModule } from '../pages/homepds/homepds.module';
+import {Camera} from '@ionic-native/camera';
 
 //models
 import {usuario} from '../users.model';
@@ -24,7 +27,8 @@ import { LoginPage } from './../pages/login/login';
 import { CadastrousuarioPage } from '../pages/cadastrousuario/cadastrousuario';
 import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 import { HomePage } from '../pages/home/home';
-import { LoginPdsPage } from './../pages/login-pds/login-pds';
+import { HomepdsPage } from './../pages/homepds/homepds';
+
 
 
 
@@ -41,15 +45,15 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     LoginPage,
     CadastrousuarioPage,
-    CadastroPdsPage,
-    LoginPdsPage
+    CadastroPdsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(environment.firebase),
     IonicStorageModule.forRoot(),
-    HomePageModule
+    HomePageModule,
+    HomepdsPageModule
 
 
 
@@ -61,7 +65,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CadastrousuarioPage,
     CadastroPdsPage,
     HomePage,
-    LoginPdsPage
+    HomepdsPage
 
 
   ],
@@ -73,7 +77,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AngularFireModule,
     usuario,
     AngularFireDatabase,
-    pds
+    pds,
+    DatePipe,
+    Camera
   ]
 })
 export class AppModule {}
