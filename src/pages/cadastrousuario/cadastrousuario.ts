@@ -16,6 +16,7 @@ import {usuario} from '../../users.model';
 
 
 
+
 @IonicPage()
 @Component({
   selector: 'page-cadastrousuario',
@@ -24,6 +25,7 @@ import {usuario} from '../../users.model';
 export class CadastrousuarioPage {
 
   registerform: FormGroup;
+ 
 
   constructor(
     public navCtrl: NavController,
@@ -64,6 +66,7 @@ export class CadastrousuarioPage {
 
 
   }
+
 
   criarObjeto(){
     this.dadosUser.nome = this.registerform.value.nome;

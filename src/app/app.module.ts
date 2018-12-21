@@ -11,7 +11,8 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePageModule } from '../pages/home/home.module';
 import { HomepdsPageModule } from '../pages/homepds/homepds.module';
-import {Camera} from '@ionic-native/camera';
+import { Camera } from '@ionic-native/camera';
+
 
 //models
 import {usuario} from '../users.model';

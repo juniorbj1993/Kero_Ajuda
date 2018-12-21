@@ -1,5 +1,5 @@
 export class pds{
-  public img:string;
+  public img:object = {};
   public nome:string;
   public sobrenome:string;
   public telefone: string;

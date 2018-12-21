@@ -4,77 +4,76 @@
         <h5  navPop><ion-icon name="arrow-dropleft">  Voltar</ion-icon></h5>
     </ion-grid>
 
-    <ion-card>
       <ion-card-content>
         <ion-grid>
-            <ion-item>
-                <ion-content padding>
-                    <img src="{{ photo }}" />
-                </ion-content>
-                <button ion-button large block (click)="takePicture()">Imagem</button>
-            </ion-item>
           <form [formGroup]="registerform" (ngSubmit)="registerUsers()">
             <ion-list>
-              <ion-item>
-                <ion-input type="text" placeholder="Primeiro nome" formControlName="nome"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="Data de nascimento (DDMMAAAA)" formControlName="datadenascimento"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="tel" placeholder="Telefone" formControlName="telefone"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-input type="number" placeholder="CPF (Somente números)" formControlName="cpf"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="number" placeholder="RG (Somente números)" formControlName="rg"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-input type="text" placeholder="Nacionalidade" formControlName="nacionalidade"></ion-input>
-              </ion-item>
-              <ion-item>
-                  <ion-input type="text" placeholder="Naturalidade" formControlName="naturalidade"></ion-input>
-              </ion-item>
-
-
-              <ion-item>
-                  <ion-label> Estado:</ion-label>
-                  <ion-select multiple="false" formControlName="estado">
-                    <ion-option value = "Ceará">Ceará</ion-option>
-                  </ion-select>
-              </ion-item>
-              <ion-item>
-                  <ion-label> Cidade:</ion-label>
-                  <ion-select multiple="false" formControlName="cidade">
-                    <ion-option value = "Barbalha">Barbalha</ion-option>
-                    <ion-option value = "Crato">Crato</ion-option>
-                    <ion-option value = "Juazeiro do Norte">Juazeiro do Norte</ion-option>
-                  </ion-select>
-              </ion-item>
-
-
-              <ion-item>
-                <ion-input type="text" placeholder="Bairro" formControlName="bairro"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="text" placeholder="Rua" formControlName="rua"></ion-input>
-              </ion-item>
-              <ion-item>
-                <ion-input type="number" placeholder="Número da residência" formControlName="numero"></ion-input>
-              </ion-item>
-
-              <ion-item>
-                <ion-label> Função:</ion-label>
-                <ion-select multiple="false" formControlName="funcao">
-                  <ion-option value = "Serviços Domésticos">Serviços Domésticos</ion-option>
-                  <ion-option value = "Pedreiro">Pedreiro</ion-option>
-                  <ion-option value = "Pintor">Pintor</ion-option>
-                </ion-select>
-              </ion-item>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Primeiro nome" formControlName="nome"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="text" placeholder="Data de nascimento (DDMMAAAA)" formControlName="datadenascimento"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="tel" placeholder="Telefone" formControlName="telefone"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="number" placeholder="CPF (Somente números)" formControlName="cpf"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="number" placeholder="RG (Somente números)" formControlName="rg"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Nacionalidade" formControlName="nacionalidade"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Naturalidade" formControlName="naturalidade"></ion-input>
+                    </ion-item>
+   
+              
+              <ion-card>
+                  <ion-item>
+                      <ion-label> Estado:</ion-label>
+                      <ion-select multiple="false" formControlName="estado">
+                        <ion-option value = "Ceará">Ceará</ion-option>
+                      </ion-select>
+                  </ion-item>
+                  <ion-item>
+                      <ion-label> Cidade:</ion-label>
+                      <ion-select multiple="false" formControlName="cidade">
+                        <ion-option value = "Barbalha">Barbalha</ion-option>
+                        <ion-option value = "Crato">Crato</ion-option>
+                        <ion-option value = "Juazeiro do Norte">Juazeiro do Norte</ion-option>
+                      </ion-select>
+                  </ion-item>
+    
+              </ion-card>
+              
+                  <ion-item>
+                      <ion-input type="text" placeholder="Bairro" formControlName="bairro"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="text" placeholder="Rua" formControlName="rua"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="number" placeholder="Número da residência" formControlName="numero"></ion-input>
+                    </ion-item>
+      
+              
+              <ion-card>
+                  <ion-item>
+                      <ion-label> Função:</ion-label>
+                      <ion-select multiple="false" formControlName="funcao">
+                        <ion-option value = "Serviços Domésticos">Serviços Domésticos</ion-option>
+                        <ion-option value = "Pedreiro">Pedreiro</ion-option>
+                        <ion-option value = "Pintor">Pintor</ion-option>
+                      </ion-select>
+                    </ion-item>
+              </ion-card>
+             
 
 
               <ion-item>
@@ -99,7 +98,6 @@
         </ion-grid>
       </ion-card-content>
 
-    </ion-card>
 
   </div>
 

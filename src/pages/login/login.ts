@@ -7,6 +7,7 @@ import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
+import { SplashScreen } from '@ionic-native/splash-screen';
 
 
 @IonicPage()
@@ -24,7 +25,8 @@ export class LoginPage {
     public formbuider: FormBuilder,
     public toastCtrl: ToastController,
     public storage: Storage,
-    public afAuth: AngularFireAuth
+    public afAuth: AngularFireAuth,
+    public splashScreen: SplashScreen
 
     ) {
 
@@ -40,8 +42,10 @@ export class LoginPage {
 
     this.afAuth.auth.signInWithEmailAndPassword(this.loginForm.value.email,this.loginForm.value.senha)
       .then((resposta)=>{
+        this.splashScreen.show();
         this.storage.set('userId',resposta.uid)
           .then(()=>{
+            this.splashScreen.hide();
             this.navCtrl.setRoot(ConfiguracoesPage);
           })
       })

@@ -10,51 +10,32 @@
     </ion-title>
   </ion-navbar>
 
+
 </ion-header>
 <ion-content padding>
+        
+    <ion-slides pager class="slides">
+            <ion-slide *ngFor="let slide of slides">
+                    <img [src]="slide.image" class="slide-image"/>
+                    <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+                    <p [innerHTML]="slide.description"></p>
+            </ion-slide>
+            <ion-slide>
+                <div *ngFor="let estrelas of dadosusuario">
+                    <img src="../../assets/imgs/keroajuda/icons8-gold-medal-96.png" class="slide-image"/>
+                    <h2 class="slide-title">Minha qualificação por serviços realizados.</h2>
+                    <br>
+                    <div>
+                        <h3><ion-icon name="star"></ion-icon> = {{estrelas.estrelas.otimo}}</h3>
+                        <h3><ion-icon name="star-half"></ion-icon> = {{estrelas.estrelas.bom}}</h3>
+                        <h3><ion-icon name="star-outline"></ion-icon> = {{estrelas.estrelas.ruim}}</h3>
+                        
+                    </div>
+                    
+                                       
+                </div>
 
-    <ion-card >
-        <ion-card-content *ngFor="let U of dadosusuario">
-          <ion-card class="Minha classificacao">
-              <div>
-                  <h2>Minha Classificação</h2>
-              </div>
-
-              <div>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  = {{U.estrelas.cinco}}
-
-              </div>
-
-              <div>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  = {{U.estrelas.quatro}}
-              </div>
-
-              <div>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  <ion-icon name="star"></ion-icon>
-                  = {{U.estrelas.tres}}
-              </div>
-
-              <div>
-                <ion-icon name="star"></ion-icon>
-                <ion-icon name="star"></ion-icon>
-                = {{U.estrelas.duas}}
-              </div>
-              <div>
-                  <ion-icon name="star"></ion-icon> = {{U.estrelas.uma}}
-              </div>
-          </ion-card>
-
-        </ion-card-content>
-    </ion-card>
+            </ion-slide>
+         
+    </ion-slides>
 </ion-content>

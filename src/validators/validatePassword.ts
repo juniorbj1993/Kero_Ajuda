@@ -1,4 +1,5 @@
 import { AbstractControl } from '@angular/forms';
+
 export function ValidateConfirmPassword(control: AbstractControl){
 
   if(!control.root.value){
@@ -12,3 +13,4 @@ export function ValidateConfirmPassword(control: AbstractControl){
   }
 
 }
+

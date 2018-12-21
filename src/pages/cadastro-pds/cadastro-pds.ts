@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidateConfirmPassword } from '../../validators/validatePassword';
@@ -9,8 +10,6 @@ import { AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {pds} from '../../users.model';
-import { Camera, CameraOptions } from '@ionic-native/camera';
-
 
 
 @IonicPage()
@@ -21,7 +20,6 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 export class CadastroPdsPage {
 
   registerform: FormGroup;
-  photo: string = '';
 
   constructor(
     public navCtrl: NavController,
@@ -32,9 +30,11 @@ export class CadastroPdsPage {
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
     private dadosPDS: pds,
-    private camera: Camera
+    public splashScreen: SplashScreen,
+
 
     ) {
+      
     this.registerform = this.formbuilder.group({
       nome: [null,[Validators.required,Validators.minLength(2)]],
       sobrenome: [null,[Validators.required,Validators.minLength(6)]],
@@ -67,32 +67,6 @@ export class CadastroPdsPage {
 
   }
 
-  takePicture() {
-    this.photo = '';
-
-    const options: CameraOptions = {
-      quality: 100,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE,
-      allowEdit: true,
-      targetWidth: 100,
-      targetHeight: 100
-    }
-
-    this.camera.getPicture(options)
-      .then((imageData) => {
-        let base64image = 'data:image/jpeg;base64,' + imageData;
-        this.photo = base64image;
-
-      }, (error) => {
-        console.error(error);
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-  }
-
   criarObjeto(){
     this.dadosPDS.nome = this.registerform.value.nome;
     this.dadosPDS.sobrenome = this.registerform.value.sobrenome;
@@ -109,7 +83,7 @@ export class CadastroPdsPage {
     this.dadosPDS.numero = this.registerform.value.numero;
     this.dadosPDS.email = this.registerform.value.email;
     this.dadosPDS.funcao = this.registerform.value.funcao;
-    this.dadosPDS.estrelas = {uma: 0, duas: 0, tres: 0, quatro: 0, cinco: 0};
+    this.dadosPDS.estrelas = {uma: 0, duas: 0, tres: 0};
   }
 
 
@@ -129,6 +103,7 @@ export class CadastroPdsPage {
             this.navCtrl.pop();
           })
         })
+               
       .catch((error)=>{
         if (error.code == 'auth/email-already-in-use' ) {
             const toast = this.toastCtrl.create({

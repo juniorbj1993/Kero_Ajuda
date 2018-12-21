@@ -13,7 +13,7 @@ import { pds } from './../../users.model';
 export class HomepdsPage {
   public dadosusuario: Array <pds> = []
   Uid: string
-
+  star: Array<object>;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private storage: Storage,
@@ -26,9 +26,11 @@ export class HomepdsPage {
         this.db.database.ref(`PdsData/${resposta}`)
         .once('value')
         .then((snapshot: any)=>{
-          let dados: Array<any> = []
           snapshot.forEach((childSnapshot: any)=>{
               this.dadosusuario.push(childSnapshot.val())
+              console.log(this.dadosusuario)
+              
+         
           })
         })
         .catch((erro)=>{
@@ -36,5 +38,19 @@ export class HomepdsPage {
         })
       })
   }
+
+  slides = [
+    {
+      title: "Qual a função do Kero AJuda?",
+      description: "Proporcionar facilidade e agilidade para conectar a mais completa plataforma de serviços especializados a quem precisar, criando uma relação sustentável e de confiança entre cliente e profissional.",
+      image: "../../assets/imgs/logo_kero_ajuda.png",
+      
+    },
+    {
+      title: "Para Pensar!",
+      description: "Inovação, produtos e serviços não existem! Até que você tome atitude e os faça existir. (Edilson Gomes de Lima)",
+      image: "../../assets/imgs/logo_solta.png",
+    }
+  ];
 
 }
