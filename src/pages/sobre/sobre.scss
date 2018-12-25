@@ -1,3 +1,29 @@
 page-sobre {
 
+    .slide-zoom {
+        height: 100%;
+        background-color: #ffffff;
+      }
+    
+      .slide-title {
+        margin-top: 2.8rem;
+      }
+    
+      .slide-image {
+        max-height: 50%;
+        max-width: 60%;
+        margin: 18px 0;
+      }
+      .equipe_titulo{
+        padding: 10px;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        box-shadow: 5px 8px 12px #123879;
+      }
+      .equipe_img{
+        margin-bottom: 15%;
+        margin-top: 10%;
+        box-shadow: 5px 8px 12px #123879;
+      }
+    
 }

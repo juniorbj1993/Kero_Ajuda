@@ -11,7 +11,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePageModule } from '../pages/home/home.module';
 import { HomepdsPageModule } from '../pages/homepds/homepds.module';
-import { Camera } from '@ionic-native/camera';
+import { SobrePageModule } from './../pages/sobre/sobre.module';
 
 
 //models
@@ -29,6 +29,7 @@ import { CadastrousuarioPage } from '../pages/cadastrousuario/cadastrousuario';
 import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 import { HomePage } from '../pages/home/home';
 import { HomepdsPage } from './../pages/homepds/homepds';
+import { SobrePage } from '../pages/sobre/sobre';
 
 
 
@@ -36,6 +37,7 @@ import { HomepdsPage } from './../pages/homepds/homepds';
 //outros
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 
 
@@ -54,7 +56,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AngularFireModule.initializeApp(environment.firebase),
     IonicStorageModule.forRoot(),
     HomePageModule,
-    HomepdsPageModule
+    HomepdsPageModule,
+    SobrePageModule
 
 
 
@@ -66,7 +69,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CadastrousuarioPage,
     CadastroPdsPage,
     HomePage,
-    HomepdsPage
+    HomepdsPage,
+    SobrePage
 
 
   ],
@@ -79,8 +83,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     usuario,
     AngularFireDatabase,
     pds,
-    DatePipe,
-    Camera
+    DatePipe
   ]
 })
 export class AppModule {}

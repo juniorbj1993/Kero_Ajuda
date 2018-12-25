@@ -14,20 +14,29 @@
   </ion-header>
 <ion-content padding>
 
-    <ion-slides pager>
+  <ion-slides pager class="slides">
+    <ion-slide>
+        <img src="../../assets/imgs/logo_kero_ajuda.png" class="slide-image"/>
+        <h2 class="slide-title">Para solicitar um serviço clique no botão abaixo.</h2>
+        <br>
+        <div>
+            <ion-card>
+                <button ion-button color="dark" clear full (click)="verPds()" ><img src="../../assets/imgs/logo_solta.png" alt=""> Kero Ajuda</button>
+            </ion-card>
+            
+        </div>
+      
 
-        <ion-slide>
-          <h2>Slide 1</h2>
-        </ion-slide>
-
-        <ion-slide>
-          <h2>Slide 2</h2>
-        </ion-slide>
-
-        <ion-slide>
-          <h2>Slide 3</h2>
-        </ion-slide>
-
-      </ion-slides>
+    </ion-slide>
+    <ion-slide *ngFor="let slide of slides">
+            <img [src]="slide.image" class="slide-image"/>
+            <ion-card>
+                <h2 class="slide-title" [innerHTML]="slide.title"></h2>
+                <p [innerHTML]="slide.description"></p>
+            </ion-card>
+            
+    </ion-slide>
+    
+  </ion-slides>
 
 </ion-content>

@@ -1,11 +1,10 @@
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidateConfirmPassword } from '../../validators/validatePassword';
 
-import { ToastController } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
+import { ToastController,AlertController, LoadingController } from 'ionic-angular';
+
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -30,8 +29,7 @@ export class CadastroPdsPage {
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
     private dadosPDS: pds,
-    public splashScreen: SplashScreen,
-
+    public loadingCtrl: LoadingController
 
     ) {
       
@@ -89,11 +87,16 @@ export class CadastroPdsPage {
 
 
   registerUsers(){
+    const loader = this.loadingCtrl.create({
+      content: "Por favor aguarde...",
+    });
+    loader.present();
     this.criarObjeto()
     this.afAuth.auth.createUserWithEmailAndPassword(this.registerform.value.email, this.registerform.value.senha)
       .then((resposta)=>{
           this.db.database.ref('/PdsData').child(resposta.uid).push(this.dadosPDS)
           .then(()=>{
+            loader.dismiss()
             const alert = this.alertCtrl.create({
               title: 'Bem vindo ao Kero Ajuda, '+ this.registerform.value.nome,
               subTitle: 'Sua conta foi criada com sucesso!',
@@ -106,6 +109,7 @@ export class CadastroPdsPage {
                
       .catch((error)=>{
         if (error.code == 'auth/email-already-in-use' ) {
+            loader.dismiss()
             const toast = this.toastCtrl.create({
             message: "Email já cadastrado, digite outro Email!",
             duration: 5000,
@@ -122,6 +126,7 @@ export class CadastroPdsPage {
 
   }
 
+ 
 
 
 }

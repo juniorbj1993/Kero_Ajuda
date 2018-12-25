@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SobrePage } from '../sobre/sobre';
 
 /**
  * Generated class for the ContatoPage page.
@@ -21,5 +22,7 @@ export class ContatoPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ContatoPage');
   }
-
+  openAboutPage(){
+    this.navCtrl.push(SobrePage);
+  }
 }

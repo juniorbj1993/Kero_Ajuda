@@ -7,7 +7,7 @@ import { ToastController } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { LoadingController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -26,7 +26,8 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public storage: Storage,
     public afAuth: AngularFireAuth,
-    public splashScreen: SplashScreen
+    public loadingCtrl: LoadingController
+  
 
     ) {
 
@@ -40,16 +41,21 @@ export class LoginPage {
   }
   login(){
 
+    const loader = this.loadingCtrl.create({
+      content: "Aguarde por favor..."
+    });
+    loader.present();
     this.afAuth.auth.signInWithEmailAndPassword(this.loginForm.value.email,this.loginForm.value.senha)
       .then((resposta)=>{
-        this.splashScreen.show();
         this.storage.set('userId',resposta.uid)
           .then(()=>{
-            this.splashScreen.hide();
+            loader.dismiss();
             this.navCtrl.setRoot(ConfiguracoesPage);
+
           })
       })
       .catch((erro)=>{
+        loader.dismiss()
         if(erro.code == 'auth/wrong-password' || erro.code ==  'auth/user-not-found' ){
           const toast = this.toastCtrl.create({
             message: "Credenciais incorretas, tente novamente!",
@@ -68,6 +74,7 @@ export class LoginPage {
   cadastrarpds(){
     this.navCtrl.push(CadastroPdsPage);
   }
+
 
 
 

@@ -5,6 +5,7 @@ import { ValidateConfirmPassword } from '../../validators/validatePassword';
 
 import { ToastController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { LoadingController } from 'ionic-angular';
 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
@@ -35,7 +36,8 @@ export class CadastrousuarioPage {
     public alertCtrl: AlertController,
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
-    private dadosUser: usuario
+    private dadosUser: usuario,
+    public loadingCtrl: LoadingController
 
     ) {
     this.registerform = this.formbuilder.group({
@@ -86,11 +88,16 @@ export class CadastrousuarioPage {
 
 
   registerUsers(){
+    const loader = this.loadingCtrl.create({
+      content: "Aguarde por favor...",
+    });
+    loader.present();
     this.criarObjeto()
     this.afAuth.auth.createUserWithEmailAndPassword(this.registerform.value.email, this.registerform.value.senha)
       .then((resposta)=>{
           this.db.database.ref('/UserData').child(resposta.uid).push(this.dadosUser)
           .then(()=>{
+            loader.dismiss()
             const alert = this.alertCtrl.create({
               title: 'Bem vindo ao Kero Ajuda, '+ this.registerform.value.nome,
               subTitle: 'Sua conta foi criada com sucesso!',
@@ -101,6 +108,7 @@ export class CadastrousuarioPage {
           })
         })
       .catch((error)=>{
+        loader.dismiss()
         if (error.code == 'auth/email-already-in-use' ) {
             const toast = this.toastCtrl.create({
             message: "Email já cadastrado, digite outro Email!",
@@ -117,8 +125,6 @@ export class CadastrousuarioPage {
       })
 
   }
-
-
 
 
 }

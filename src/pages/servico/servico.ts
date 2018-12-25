@@ -29,4 +29,35 @@ export class ServicoPage {
     });
   }
 
+  botoes = [
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Serviços Domésticos"
+    },
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Serviços Elétricos"
+    },
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Serviços Hidráulicos"
+    },
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Informática"
+    },
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Frete e montagem"
+    },
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Pintor"
+    },
+    {
+      imagem: "../../assets/imgs/logo_solta.png",
+      nome_servico: "Pedreiro"
+    }
+  ]
+
 }

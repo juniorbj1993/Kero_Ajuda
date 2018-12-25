@@ -13,6 +13,25 @@ page-servico {
     border-radius: 15px;
   }
 
-
+  .menu{
+    color:white;
+  }
+  img{
+    width: 40%;
+    position: relative;
+    margin-left: -20px;
+    
+  }
+  .card_button_servicos{
+    margin-bottom: 8%;
+    border-radius: 30px;
+  }
+  .button_servicos{
+    border-radius: 30px;
+  }
+  .button_servicos span.button-inner{
+    justify-content: left !important;
+  }
+  
 
 }

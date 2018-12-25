@@ -17,8 +17,7 @@ export class HomepdsPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private storage: Storage,
-    public db: AngularFireDatabase) {
-  }
+    public db: AngularFireDatabase) {}
 
   ionViewDidLoad() {
     this.storage.get('userId')
@@ -28,9 +27,6 @@ export class HomepdsPage {
         .then((snapshot: any)=>{
           snapshot.forEach((childSnapshot: any)=>{
               this.dadosusuario.push(childSnapshot.val())
-              console.log(this.dadosusuario)
-              
-         
           })
         })
         .catch((erro)=>{
@@ -41,7 +37,7 @@ export class HomepdsPage {
 
   slides = [
     {
-      title: "Qual a função do Kero AJuda?",
+      title: "Qual a finalidade do Kero AJuda?",
       description: "Proporcionar facilidade e agilidade para conectar a mais completa plataforma de serviços especializados a quem precisar, criando uma relação sustentável e de confiança entre cliente e profissional.",
       image: "../../assets/imgs/logo_kero_ajuda.png",
       

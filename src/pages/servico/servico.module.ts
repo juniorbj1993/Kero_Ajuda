@@ -9,5 +9,8 @@ import { ServicoPage } from './servico';
   imports: [
     IonicPageModule.forChild(ServicoPage),
   ],
+  exports:[
+    ServicoPage
+  ]
 })
 export class ServicoPageModule {}

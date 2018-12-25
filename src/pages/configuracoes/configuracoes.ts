@@ -1,3 +1,4 @@
+import { MeusdadosusuarioPage } from './../meusdadosusuario/meusdadosusuario';
 import { MeusdadosPage } from './../meusdados/meusdados';
 import { ContatoPage } from './../contato/contato';
 import { HomepdsPage } from './../homepds/homepds';
@@ -5,10 +6,11 @@ import { Storage } from '@ionic/storage';
 import { LoginPage } from './../login/login';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { DatePipe } from '@angular/common';
+
 
 
 @IonicPage()
@@ -17,32 +19,44 @@ import { DatePipe } from '@angular/common';
   templateUrl: 'configuracoes.html',
 })
 export class ConfiguracoesPage {
-  public dadosusuario: any;
+  dadosusuario: any;
   Uid: string
   rootPage: any;
+  user_type_pds: boolean;
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public afAuth: AngularFireAuth,
      public storage: Storage,
      public db: AngularFireDatabase,
-     private datepipe: DatePipe
+     private datepipe: DatePipe,
+     public loadingCtrl: LoadingController
      ) {
+
+     
   }
 
   ionViewDidLoad() {
+    let loader = this.loadingCtrl.create({
+      content: "Por favor aguarde..."
+    });  
+    loader.present();
+    
     this.storage.get('userId')
     .then((resposta)=>{
       this.db.database.ref(`UserData/${resposta}`)
       .once('value')
       .then((snapshot: any)=>{
         snapshot.forEach((childSnapshot: any)=>{
-          this.dadosusuario = childSnapshot.val()
-           console.log('logado como Usuario')
-            this.rootPage = HomePage;
+          this.dadosusuario = childSnapshot.val();
+          loader.dismiss();
+          this.user_type_pds = false;
+          
+          this.rootPage = HomePage;
         })
       })
       .catch((erro)=>{
+        loader.dismiss();
         console.log(erro.code)
       })
 
@@ -51,13 +65,14 @@ export class ConfiguracoesPage {
       .then((snapshot: any)=>{
         snapshot.forEach((childSnapshot: any)=>{
           this.dadosusuario = childSnapshot.val()
-            console.log('logado como PDS')
             let data = this.datepipe.transform(new Date(),"dd"+"/"+"MM"+"/"+"yyyy"+","+" "+"HH"+":"+"mm" )
-            console.log(data);
+            loader.dismiss();
+            this.user_type_pds = true;
             this.rootPage = HomepdsPage;
         })
       })
       .catch((erro)=>{
+        loader.dismiss();
         console.log(erro.code)
       })
 
@@ -68,9 +83,7 @@ export class ConfiguracoesPage {
   openContactPage(){
     this.navCtrl.push(ContatoPage);
   }
-  openAboutPage(){
-
-  }
+ 
   meusDadosPage(){
     this.navCtrl.push(MeusdadosPage,{
       dados: this.dadosusuario
@@ -88,5 +101,18 @@ export class ConfiguracoesPage {
 
       })
   }
+  meusDadosPage_User(){
+    this.navCtrl.push(MeusdadosusuarioPage,{
+      dados: this.dadosusuario
+    });
+  }
+  termosDeUso(){
+
+  }
+  politicaDePrivacidade(){
+    
+  }
+
+  
 
 }

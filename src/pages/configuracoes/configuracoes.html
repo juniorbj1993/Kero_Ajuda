@@ -8,16 +8,28 @@
   <ion-content>
     <ion-list >
       <button class="navegacao" ion-item (click)="openContactPage()">
-        Contato Kero Ajuda
+        Sobre o Kero Ajuda
       </button>
-      <button class="navegacao" ion-item (click)="openAboutPage()">
-        Sobre Nós
+      <button class="navegacao" ion-item (click)="termosDeUso()">
+        Termos de uso
       </button>
-      <button class="navegacao" ion-item (click)="meusDadosPage()">
+      <button class="navegacao" ion-item (click)="politicaDePrivacidade()">
+        Politica de privacidade
+      </button>
+     
+      <div *ngIf="user_type_pds; else user_type_user">
+        <button class="navegacao" ion-item (click)="meusDadosPage()">
         Minha Conta
-      </button>
+        </button>
+      </div>
+      <ng-template #user_type_user>
+        <button class="navegacao" ion-item (click)="meusDadosPage_User()">
+        Meus Dados
+        </button>
+      </ng-template>
+      
       <button class="navegacao" ion-item  style="color: red"  (click)="logout()">
-        Logout
+      Logout
       </button>
     </ion-list>
   </ion-content>
