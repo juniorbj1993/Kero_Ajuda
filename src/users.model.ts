@@ -1,5 +1,5 @@
 export class pds{
-  public img:object = {};
+  public img:object;
   public nome:string;
   public sobrenome:string;
   public telefone: string;
@@ -15,10 +15,15 @@ export class pds{
   public rua:string;
   public numero:string;
 
-  public estrelas:object;
+  public estrelas:object = {
+    bom: 0,
+    otimo: 0,
+    ruim: 0
+  };
   public datadenascimento:string;
   public nacionalidade:string;
   public naturalidade:string;
+  public pagamento: number = 0;
 }
 
 

@@ -2,7 +2,7 @@
 <ion-content padding>
     <div>
       <ion-grid class="arrowreturn">
-          <h5  navPop><ion-icon name="arrow-dropleft">  Voltar</ion-icon></h5>
+          <h5  navPop><ion-icon name="md-arrow-back">  Voltar</ion-icon></h5>
       </ion-grid>
 
         <ion-card-content>
@@ -10,7 +10,7 @@
             <form [formGroup]="registerform" (ngSubmit)="registerUsers()">
               <ion-list>
                     <ion-item>
-                        <ion-input type="text" placeholder="Primeiro nome" formControlName="nome"></ion-input>
+                        <ion-input type="text" placeholder="Nome" formControlName="nome"></ion-input>
                       </ion-item>
                       <ion-item>
                         <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
@@ -40,22 +40,23 @@
                     <ion-item>
                         <ion-label> Cidade:</ion-label>
                         <ion-select multiple="false" formControlName="cidade">
-                          <ion-option value = "Barbalha">Barbalha</ion-option>
-                          <ion-option value = "Crato">Crato</ion-option>
-                          <ion-option value = "Juazeiro do Norte">Juazeiro do Norte</ion-option>
+                          <div *ngFor="let c of cidades">
+                              <ion-option value = "{{c}}">{{c}}</ion-option>
+                          </div>
                         </ion-select>
                     </ion-item>
                 </ion-card>
-               
-                    <ion-item>
-                        <ion-input type="text" placeholder="Bairro" formControlName="bairro"></ion-input>
-                      </ion-item>
-                      <ion-item>
-                        <ion-input type="text" placeholder="Rua" formControlName="rua"></ion-input>
-                      </ion-item>
-                      <ion-item>
-                        <ion-input type="number" placeholder="Número da residência" formControlName="numero"></ion-input>
-                      </ion-item>
+                <ion-item>
+                  <ion-input type="text" placeholder="Rua" formControlName="rua"></ion-input>
+                </ion-item>
+                <ion-item>
+                  <ion-input type="number" placeholder="Número da residência" formControlName="numero"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-input type="text" placeholder="Bairro" formControlName="bairro"></ion-input>
+                </ion-item>
+                  
+                 
                 
 
 

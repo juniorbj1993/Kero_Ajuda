@@ -8,6 +8,8 @@ import { MeusdadosPageModule } from './../meusdados/meusdados.module';
 import { ContatoPageModule } from './../contato/contato.module';
 import { ServicoPageModule } from './../servico/servico.module';
 import { DetalheservicoPageModule } from '../detalheservico/detalheservico.module';
+import { ListapdsPageModule } from '../pdsdados/listapds/listapds.module';
+import { DetalhepdsPageModule } from '../pdsdados/detalhepds/detalhepds.module';
 
 
 //pages
@@ -18,6 +20,9 @@ import { ContatoPage } from '../contato/contato';
 import { MeusdadosPage } from '../meusdados/meusdados';
 import { ServicoPage } from '../servico/servico';
 import { DetalheservicoPage } from './../detalheservico/detalheservico';
+import { ListapdsPage } from '../pdsdados/listapds/listapds';
+import { DetalhepdsPage } from '../pdsdados/detalhepds/detalhepds';
+
 
 
 
@@ -35,6 +40,8 @@ import { DetalheservicoPage } from './../detalheservico/detalheservico';
     MeusdadosusuarioPageModule,
     ServicoPageModule,
     DetalheservicoPageModule,
+    ListapdsPageModule,
+    DetalhepdsPageModule
 
 
   ],
@@ -48,6 +55,8 @@ import { DetalheservicoPage } from './../detalheservico/detalheservico';
     MeusdadosusuarioPage,
     ServicoPage,
     DetalheservicoPage,
+    DetalhepdsPage,
+    ListapdsPage
 
   ]
 })

@@ -8,11 +8,7 @@ page-servico {
   .item-md {
     color: #2d3783;
   }
-  .item-block{
-    margin-top: 15px;
-    border-radius: 15px;
-  }
-
+  
   .menu{
     color:white;
   }
@@ -25,13 +21,15 @@ page-servico {
   .card_button_servicos{
     margin-bottom: 8%;
     border-radius: 30px;
+    box-shadow: 5px 5px 12px 0px #909090;
   }
-  .button_servicos{
-    border-radius: 30px;
+  .item-block{
+   //conteudo interno do botão
   }
-  .button_servicos span.button-inner{
-    justify-content: left !important;
-  }
+  // .background_servicos{
+  //   background-color: #fbc01a;
+  // }
+  
   
 
 }

@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {DetalheservicoPage} from '../detalheservico/detalheservico';
-/**
- * Generated class for the ServicoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -21,7 +15,7 @@ export class ServicoPage {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ServicoPage');
+    
   }
   irParaPagDetalheServico(nome:String){
     this.navCtrl.push(DetalheservicoPage,{
@@ -31,33 +25,35 @@ export class ServicoPage {
 
   botoes = [
     {
-      imagem: "../../assets/imgs/logo_solta.png",
-      nome_servico: "Serviços Domésticos"
+      icone: "ios-alarm-outline",
+      nome_servico: "Serviços Domésticos",
     },
     {
-      imagem: "../../assets/imgs/logo_solta.png",
-      nome_servico: "Serviços Elétricos"
+      icone: "ios-flash-outline",
+      nome_servico: "Serviços Elétricos",
+      
     },
     {
-      imagem: "../../assets/imgs/logo_solta.png",
+      icone: "ios-water-outline",
       nome_servico: "Serviços Hidráulicos"
     },
     {
-      imagem: "../../assets/imgs/logo_solta.png",
+      icone: "ios-desktop-outline",
       nome_servico: "Informática"
     },
     {
-      imagem: "../../assets/imgs/logo_solta.png",
-      nome_servico: "Frete e montagem"
+      icone: "ios-hammer-outline",
+      nome_servico: "Frete e Montagem"
     },
     {
-      imagem: "../../assets/imgs/logo_solta.png",
-      nome_servico: "Pintor"
+      icone: "ios-construct-outline",
+      nome_servico: "Construção Civil"
     },
     {
-      imagem: "../../assets/imgs/logo_solta.png",
-      nome_servico: "Pedreiro"
+      icone: "ios-people-outline",
+      nome_servico: "Serviços Diversos"
     }
+
   ]
 
 }

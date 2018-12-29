@@ -8,7 +8,7 @@
   <ion-content>
     <ion-list >
       <button class="navegacao" ion-item (click)="openContactPage()">
-        Sobre o Kero Ajuda
+        Fale conosco
       </button>
       <button class="navegacao" ion-item (click)="termosDeUso()">
         Termos de uso
@@ -19,7 +19,7 @@
      
       <div *ngIf="user_type_pds; else user_type_user">
         <button class="navegacao" ion-item (click)="meusDadosPage()">
-        Minha Conta
+        Meus Dados
         </button>
       </div>
       <ng-template #user_type_user>

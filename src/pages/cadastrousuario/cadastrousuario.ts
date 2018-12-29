@@ -125,6 +125,11 @@ export class CadastrousuarioPage {
       })
 
   }
+  cidades=[
+    'Juazeiro do Norte',
+    'Crato',
+    'Barbalha'
+  ]
 
 
 }

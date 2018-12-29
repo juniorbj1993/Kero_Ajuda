@@ -1,9 +1,4 @@
-<!--
-  Generated template for the DetalheservicoPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
 
   <ion-navbar>
@@ -13,8 +8,13 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-card>
-      
-    </ion-card>
+<ion-content padding class="background_detalhe_servico">
+    <ion-list *ngFor="let s of servicos">
+      <div *ngIf="s.categoria == titulo">
+        <button ion-item (click)="servicoSelected(s.nome_do_servico)">
+              {{s.nome_do_servico}}
+              <ion-icon name="ios-arrow-dropright-outline" item-end></ion-icon>
+        </button> 
+      </div>
+    </ion-list>
 </ion-content>

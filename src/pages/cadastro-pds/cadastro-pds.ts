@@ -81,7 +81,6 @@ export class CadastroPdsPage {
     this.dadosPDS.numero = this.registerform.value.numero;
     this.dadosPDS.email = this.registerform.value.email;
     this.dadosPDS.funcao = this.registerform.value.funcao;
-    this.dadosPDS.estrelas = {uma: 0, duas: 0, tres: 0};
   }
 
 
@@ -123,8 +122,24 @@ export class CadastroPdsPage {
 
         }
       })
-
   }
+  funcoes = [
+    'Diarista',
+    'Eletricista',
+    'Encanador',
+    'Manutenção de Computadores',
+    'Frete',
+    'Montagem de Móveis',
+    'Pintor',
+    'Pedreiro',
+    'Gesseiro',
+    'Jardineiro'
+  ]
+  cidades =[
+    'Juazeiro do Norte',
+    'Crato',
+    'Barbalha'
+  ]
 
  
 

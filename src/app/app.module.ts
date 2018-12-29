@@ -1,4 +1,3 @@
-import { DatePipe } from '@angular/common';
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +11,7 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { HomePageModule } from '../pages/home/home.module';
 import { HomepdsPageModule } from '../pages/homepds/homepds.module';
 import { SobrePageModule } from './../pages/sobre/sobre.module';
+import { ScreenOrientation } from '@ionic-native/screen-orientation';
 
 
 //models
@@ -83,7 +83,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     usuario,
     AngularFireDatabase,
     pds,
-    DatePipe
+    ScreenOrientation
   ]
 })
 export class AppModule {}

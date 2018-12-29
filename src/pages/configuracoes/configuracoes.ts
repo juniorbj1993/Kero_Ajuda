@@ -9,7 +9,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { DatePipe } from '@angular/common';
 
 
 
@@ -29,7 +28,6 @@ export class ConfiguracoesPage {
      public afAuth: AngularFireAuth,
      public storage: Storage,
      public db: AngularFireDatabase,
-     private datepipe: DatePipe,
      public loadingCtrl: LoadingController
      ) {
 
@@ -65,7 +63,6 @@ export class ConfiguracoesPage {
       .then((snapshot: any)=>{
         snapshot.forEach((childSnapshot: any)=>{
           this.dadosusuario = childSnapshot.val()
-            let data = this.datepipe.transform(new Date(),"dd"+"/"+"MM"+"/"+"yyyy"+","+" "+"HH"+":"+"mm" )
             loader.dismiss();
             this.user_type_pds = true;
             this.rootPage = HomepdsPage;
@@ -99,6 +96,8 @@ export class ConfiguracoesPage {
           this.navCtrl.setRoot(LoginPage);
         })
 
+      }).catch(()=>{
+        alert('Deu erro')
       })
   }
   meusDadosPage_User(){

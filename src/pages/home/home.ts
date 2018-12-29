@@ -17,6 +17,7 @@ export class HomePage {
 
   public dadosusuario: Array <usuario>
   Uid: string
+  
 
 
 
@@ -35,6 +36,7 @@ export class HomePage {
       })
 
     })
+    
 
   }
 

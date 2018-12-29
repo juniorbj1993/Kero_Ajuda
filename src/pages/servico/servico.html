@@ -10,14 +10,14 @@
 </ion-header>
 
 
-<ion-content padding>
-  <ion-card >
+<ion-content padding class="background_servicos">
+
       <ion-card class="card_button_servicos" *ngFor="let v of botoes">
-          <button class="button_servicos" ion-button  clear full (click)="irParaPagDetalheServico($nome = v.nome_servico)"> 
-            <img [src]="v.imagem" alt="">
-            {{v.nome_servico}}</button>
+          <button ion-item full (click)="irParaPagDetalheServico($nome = v.nome_servico)">
+              <ion-icon [name]="v.icone" item-end></ion-icon>
+              {{v.nome_servico}}
+            </button>
       </ion-card>      
-  </ion-card>
-                
+
 </ion-content>
 

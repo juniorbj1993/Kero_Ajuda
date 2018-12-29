@@ -18,7 +18,6 @@ export class MeusdadosusuarioPage {
   ionViewDidLoad() {
     this.dadosusuario = this.navParams.get('dados');
     this.listadousuario.push(this.dadosusuario);
-    console.log(this.listadousuario)
   }
 
 
