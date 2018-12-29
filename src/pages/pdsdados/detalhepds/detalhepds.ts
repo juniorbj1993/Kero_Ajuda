@@ -35,6 +35,7 @@ dados_pds: Array<object>=[];
     }
   }
   irParaWhats(telefone){
-    window.open(`https://api.whatsapp.com/send?phone=55${telefone}&text=Sou%20usuário%20do%20kero%20Ajuda%20e%20gostaria%20de%20solicitar%20seus%20serviços.`, '_blank', 'location=yes');
+    let tel_pds = telefone.replace(/[^0-9]/g,'');
+    window.open(`https://api.whatsapp.com/send?phone=55${tel_pds}&text=Sou%20usuário%20do%20kero%20Ajuda%20e%20gostaria%20de%20solicitar%20seus%20serviços.`, '_blank', 'location=yes');
   }
 }

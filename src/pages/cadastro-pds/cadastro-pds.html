@@ -15,16 +15,16 @@
                       <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
                     </ion-item>
                     <ion-item>
-                      <ion-input type="text" placeholder="Data de nascimento (DDMMAAAA)" formControlName="datadenascimento"></ion-input>
+                      <ion-input type="text" placeholder="Data de nascimento" formControlName="datadenascimento" [brmasker]="{mask:'00/00/0000', len:10}"></ion-input>
                     </ion-item>
                     <ion-item>
-                      <ion-input type="tel" placeholder="Telefone" formControlName="telefone"></ion-input>
+                      <ion-input type="tel" placeholder="Telefone" formControlName="telefone" name="telefone" [brmasker]="{mask:'(00)00000-0000', len:14}" ></ion-input>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="number" placeholder="CPF (Somente números)" formControlName="cpf"></ion-input>
+                        <ion-input type="tel" placeholder="CPF" name="cpf" formControlName="cpf" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
                     </ion-item>
                     <ion-item>
-                      <ion-input type="number" placeholder="RG (Somente números)" formControlName="rg"></ion-input>
+                      <ion-input type="tel" placeholder="RG" formControlName="rg" name="rg"></ion-input>
                     </ion-item>
                     <ion-item>
                         <ion-input type="text" placeholder="Nacionalidade" formControlName="nacionalidade"></ion-input>

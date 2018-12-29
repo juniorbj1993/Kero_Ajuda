@@ -12,6 +12,8 @@ import { HomePageModule } from '../pages/home/home.module';
 import { HomepdsPageModule } from '../pages/homepds/homepds.module';
 import { SobrePageModule } from './../pages/sobre/sobre.module';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
+import { BrMaskerModule } from 'brmasker-ionic-3';
+
 
 
 //models
@@ -57,7 +59,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     IonicStorageModule.forRoot(),
     HomePageModule,
     HomepdsPageModule,
-    SobrePageModule
+    SobrePageModule,
+    BrMaskerModule
 
 
 

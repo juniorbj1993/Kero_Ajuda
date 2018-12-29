@@ -1,5 +1,6 @@
 
 <ion-content padding>
+
     <div>
       <ion-grid class="arrowreturn">
           <h5  navPop><ion-icon name="md-arrow-back">  Voltar</ion-icon></h5>
@@ -16,10 +17,10 @@
                         <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
                       </ion-item>
                       <ion-item>
-                        <ion-input type="tel" placeholder="Telefone" formControlName="telefone"></ion-input>
+                        <ion-input type="tel" placeholder="Telefone" formControlName="telefone" name="telefone" [brmasker]="{mask:'(00)00000-0000', len:14}" ></ion-input>
                       </ion-item>
                       <ion-item>
-                          <ion-input type="tel" placeholder="CPF (Somente Números)" formControlName="cpf"></ion-input>
+                          <ion-input type="tel" placeholder="CPF" name="cpf" formControlName="cpf" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
                       </ion-item>
                       <ion-item>
                           <ion-input type="text" placeholder="Nacionalidade" formControlName="nacionalidade"></ion-input>

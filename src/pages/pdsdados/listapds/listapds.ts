@@ -23,8 +23,6 @@ export class ListapdsPage {
     if(this.navParams.get('dados') && this.navParams.get('dados_pds')){
       this.servico = this.navParams.get('dados');
       this.pds_dados = this.navParams.get('dados_pds');
-      console.log(this.servico)
-      console.log(this.pds_dados)
     }
     else{
       this.navCtrl.pop();

@@ -43,8 +43,8 @@ export class CadastrousuarioPage {
     this.registerform = this.formbuilder.group({
       nome: [null,[Validators.required,Validators.minLength(2)]],
       sobrenome: [null,[Validators.required,Validators.minLength(6)]],
-      telefone: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
-      cpf: [null,[Validators.required,Validators.minLength(11),Validators.maxLength(11)]],
+      telefone: [null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]],
+      cpf: [null,[Validators.required,Validators.minLength(14),Validators.maxLength(14)]],
       nacionalidade: [null,[Validators.required,Validators.minLength(5)]],
       naturalidade: [null,[Validators.required,Validators.minLength(5)]],
 
