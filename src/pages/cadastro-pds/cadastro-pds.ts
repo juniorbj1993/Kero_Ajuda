@@ -1,3 +1,4 @@
+import { TermosepoliticaPage } from './../termosepolitica/termosepolitica';
 import { Component} from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -9,6 +10,8 @@ import { ToastController,AlertController, LoadingController } from 'ionic-angula
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {pds} from '../../users.model';
+import { isFormattedError } from '@angular/compiler';
+import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
 
 
 @IonicPage()
@@ -50,7 +53,7 @@ export class CadastroPdsPage {
       bairro: [null,[Validators.required]],
       numero: [null,[Validators.required]],
       email: [null,[Validators.required,Validators.email]],
-      senha: [null,[Validators.required,Validators.minLength(8)]],
+      senha: [null,Validators.compose([Validators.minLength(8),Validators.maxLength(20),Validators.required])],
       confirmarsenha: [null,[Validators.required,Validators.minLength(8),ValidateConfirmPassword]]
     })
 
@@ -86,42 +89,43 @@ export class CadastroPdsPage {
 
 
   registerUsers(){
-    const loader = this.loadingCtrl.create({
-      content: "Por favor aguarde...",
-    });
-    loader.present();
-    this.criarObjeto()
-    this.afAuth.auth.createUserWithEmailAndPassword(this.registerform.value.email, this.registerform.value.senha)
-      .then((resposta)=>{
-          this.db.database.ref('/PdsData').child(resposta.uid).push(this.dadosPDS)
-          .then(()=>{
-            loader.dismiss()
-            const alert = this.alertCtrl.create({
-              title: 'Bem vindo ao Kero Ajuda, '+ this.registerform.value.nome,
-              subTitle: 'Sua conta foi criada com sucesso!',
-              buttons: ['OK']
-            });
-            alert.present();
-            this.navCtrl.pop();
+      const loader = this.loadingCtrl.create({
+        content: "Por favor aguarde...",
+      });
+      loader.present();
+      this.criarObjeto()
+      this.afAuth.auth.createUserWithEmailAndPassword(this.registerform.value.email, this.registerform.value.senha)
+        .then((resposta)=>{
+            this.db.database.ref('/PdsData').child(resposta.uid).push(this.dadosPDS)
+            .then(()=>{
+              loader.dismiss()
+              const alert = this.alertCtrl.create({
+                title: 'Bem vindo ao Kero Ajuda, '+ this.registerform.value.nome,
+                subTitle: 'Sua conta foi criada com sucesso!',
+                buttons: ['OK']
+              });
+              alert.present();
+              this.navCtrl.pop();
+            })
           })
+                 
+        .catch((error)=>{
+          if (error.code == 'auth/email-already-in-use' ) {
+              loader.dismiss()
+              const toast = this.toastCtrl.create({
+              message: "Email já cadastrado, digite outro Email!",
+              duration: 5000,
+              position: 'top'
+              });
+              toast.present();
+              this.registerform.value.email = null;
+              this.registerform.value.senha = null;
+              this.registerform.value.confirmarsenha = null;
+  
+  
+          }
         })
-               
-      .catch((error)=>{
-        if (error.code == 'auth/email-already-in-use' ) {
-            loader.dismiss()
-            const toast = this.toastCtrl.create({
-            message: "Email já cadastrado, digite outro Email!",
-            duration: 5000,
-            position: 'top'
-            });
-            toast.present();
-            this.registerform.value.email = null;
-            this.registerform.value.senha = null;
-            this.registerform.value.confirmarsenha = null;
-
-
-        }
-      })
+   
   }
   funcoes = [
     'Diarista',
@@ -140,8 +144,9 @@ export class CadastroPdsPage {
     'Crato',
     'Barbalha'
   ]
-
- 
-
-
+  verTermos(){
+    this.navCtrl.push(TermosepoliticaPage);
+  }
+  
+  
 }

@@ -10,6 +10,7 @@ import { LoadingController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {usuario} from '../../users.model';
+import { TermosepoliticaPage } from '../termosepolitica/termosepolitica';
 
 
 
@@ -130,6 +131,10 @@ export class CadastrousuarioPage {
     'Crato',
     'Barbalha'
   ]
+
+  verTermos(){
+    this.navCtrl.push(TermosepoliticaPage);
+  }
 
 
 }

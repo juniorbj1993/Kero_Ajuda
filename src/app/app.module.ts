@@ -1,3 +1,5 @@
+
+
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -13,6 +15,7 @@ import { HomepdsPageModule } from '../pages/homepds/homepds.module';
 import { SobrePageModule } from './../pages/sobre/sobre.module';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { BrMaskerModule } from 'brmasker-ionic-3';
+import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepolitica.module';
 
 
 
@@ -32,6 +35,7 @@ import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 import { HomePage } from '../pages/home/home';
 import { HomepdsPage } from './../pages/homepds/homepds';
 import { SobrePage } from '../pages/sobre/sobre';
+import { TermosepoliticaPage } from './../pages/termosepolitica/termosepolitica';
 
 
 
@@ -60,7 +64,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePageModule,
     HomepdsPageModule,
     SobrePageModule,
-    BrMaskerModule
+    BrMaskerModule,
+    TermosepoliticaPageModule
 
 
 
@@ -73,7 +78,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     CadastroPdsPage,
     HomePage,
     HomepdsPage,
-    SobrePage
+    SobrePage,
+    TermosepoliticaPage
 
 
   ],
