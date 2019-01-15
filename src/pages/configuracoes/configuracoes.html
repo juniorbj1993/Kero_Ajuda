@@ -10,13 +10,6 @@
       <button class="navegacao" ion-item (click)="openContactPage()">
         Fale conosco
       </button>
-      <button class="navegacao" ion-item (click)="termosDeUso()">
-        Termos de uso
-      </button>
-      <button class="navegacao" ion-item (click)="politicaDePrivacidade()">
-        Politica de privacidade
-      </button>
-     
       <div *ngIf="user_type_pds; else user_type_user">
         <button class="navegacao" ion-item (click)="meusDadosPage()">
         Meus Dados
@@ -27,6 +20,9 @@
         Meus Dados
         </button>
       </ng-template>
+      <button class="navegacao" ion-item (click)="verTermos()">
+        Termos de Uso
+      </button>
       
       <button class="navegacao" ion-item  style="color: red"  (click)="logout()">
       Logout

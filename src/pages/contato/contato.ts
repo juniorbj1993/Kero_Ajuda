@@ -2,12 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SobrePage } from '../sobre/sobre';
 
-/**
- * Generated class for the ContatoPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -20,7 +14,7 @@ export class ContatoPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ContatoPage');
+   
   }
   openAboutPage(){
     this.navCtrl.push(SobrePage);

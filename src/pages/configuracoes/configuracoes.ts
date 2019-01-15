@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
-
+import { TermosepoliticaPage } from './../termosepolitica/termosepolitica';
 
 
 @IonicPage()
@@ -110,6 +110,9 @@ export class ConfiguracoesPage {
   }
   politicaDePrivacidade(){
     
+  }
+  verTermos(){
+    this.navCtrl.push(TermosepoliticaPage);
   }
 
   

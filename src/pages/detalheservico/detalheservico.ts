@@ -58,37 +58,38 @@ export class DetalheservicoPage {
   }
 
   servicos = [
+    
     {
-      categoria: "Serviços Domésticos",
-      nome_do_servico: "Diarista"
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Chaveiro"
     },
     {
-      categoria: "Serviços Elétricos",
+      categoria: "Diaristas",
+      nome_do_servico: "Diarista - Serviços de Limpeza"
+    },
+    {
+      categoria: "Diaristas",
+      nome_do_servico: "Diarista - Lavar e Passar Roupas"
+    },
+    {
+      categoria: "Diaristas",
+      nome_do_servico: "Diarista - Cozinhar Refeições"
+    },
+    {
+      categoria: "Diaristas",
+      nome_do_servico: "Diarista - Cuidar de Criança"
+    },
+    {
+      categoria: "Construção Civil",
       nome_do_servico: "Eletricista"
     },
     {
-      categoria: "Serviços hidráulicos",
+      categoria: "Construção Civil",
       nome_do_servico: "Encanador"
-    },
-    {
-      categoria: "Informática",
-      nome_do_servico: "Manutenção de Computadores"
     },
     {
       categoria: "Frete e Montagem",
       nome_do_servico: "Frete"
-    },
-    {
-      categoria: "Frete e Montagem",
-      nome_do_servico: "Montagem de Móveis"
-    },
-    {
-      categoria: "Construção Civil",
-      nome_do_servico: "Pintor"
-    },
-    {
-      categoria: "Construção Civil",
-      nome_do_servico: "Pedreiro"
     },
     {
       categoria: "Construção Civil",
@@ -96,8 +97,65 @@ export class DetalheservicoPage {
     },
     {
       categoria: "Serviços Diversos",
+      nome_do_servico: "Instalação de Suporte de TV"
+    },
+    {
+      categoria: "Serviços Diversos",
       nome_do_servico: "Jardineiro"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Manutenção de Bicicletas"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Manutenção de Cadeira de Rodas"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Manutenção de Câmera de Vigilância"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Manutenção de Computadores"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Manutenção de Fogão a Gás"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Manutenção de Portão Automático"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Marceneiro"
+    },
+    {
+      categoria: "Frete e Montagem",
+      nome_do_servico: "Montagem de Móveis"
+    },
+    {
+      categoria: "Construção Civil",
+      nome_do_servico: "Pedreiro"
+    },
+    {
+      categoria: "Construção Civil",
+      nome_do_servico: "Pintor"
     }
+    ,{
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Reposição de Telhas"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Reposição de Vidro"
+    },
+    {
+      categoria: "Serviços Diversos",
+      nome_do_servico: "Suporte de TV"
+    }
+    
   ]
 
   servicoSelected(servico_selected: string){

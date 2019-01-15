@@ -26,20 +26,7 @@ export class ServicoPage {
   botoes = [
     {
       icone: "ios-alarm-outline",
-      nome_servico: "Serviços Domésticos",
-    },
-    {
-      icone: "ios-flash-outline",
-      nome_servico: "Serviços Elétricos",
-      
-    },
-    {
-      icone: "ios-water-outline",
-      nome_servico: "Serviços Hidráulicos"
-    },
-    {
-      icone: "ios-desktop-outline",
-      nome_servico: "Informática"
+      nome_servico: "Diaristas",
     },
     {
       icone: "ios-hammer-outline",
@@ -55,5 +42,13 @@ export class ServicoPage {
     }
 
   ]
+  slides = [
+    {
+      description: "O Diarista realiza serviços domésticos tais como: faxinas e limpezas  de objetos e ambientes deixando os mesmos conservados. Cada diarista tem um método diferente de prestar seu serviço, por isso, procure saber qual prestador de serviço se encaixa à sua necessidade.",
+    },
+    {
+      description: "Sempre que possível, dê sua avaliação ao prestador de serviço contratado, dessa forma você contribui para que os prestadores de serviços garantam serviços cada vez melhores. (Esse serviço estará disponível nas próximas atualizações).",
+    }
+  ];
 
 }

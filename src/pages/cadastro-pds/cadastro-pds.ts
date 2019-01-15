@@ -10,8 +10,7 @@ import { ToastController,AlertController, LoadingController } from 'ionic-angula
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {pds} from '../../users.model';
-import { isFormattedError } from '@angular/compiler';
-import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+
 
 
 @IonicPage()
@@ -22,6 +21,9 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
 export class CadastroPdsPage {
 
   registerform: FormGroup;
+  selected = null;
+ 
+  
 
   constructor(
     public navCtrl: NavController,
@@ -32,7 +34,7 @@ export class CadastroPdsPage {
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
     private dadosPDS: pds,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
 
     ) {
       
@@ -46,6 +48,7 @@ export class CadastroPdsPage {
       nacionalidade: [null,[Validators.required,Validators.minLength(1)]],
       naturalidade: [null,[Validators.required,Validators.minLength(1)]],
       funcao:[null,[Validators.required,Validators.minLength(1)]],
+      categoria:[null],
 
       estado: [null,[Validators.required]],
       cidade: [null,[Validators.required]],
@@ -58,15 +61,15 @@ export class CadastroPdsPage {
     })
 
 
-
-
   }
+  
 
 
   ionViewDidLoad() {
 
 
   }
+  
 
   criarObjeto(){
     this.dadosPDS.nome = this.registerform.value.nome;
@@ -85,6 +88,7 @@ export class CadastroPdsPage {
     this.dadosPDS.email = this.registerform.value.email;
     this.dadosPDS.funcao = this.registerform.value.funcao;
   }
+
 
 
 
@@ -125,25 +129,176 @@ export class CadastroPdsPage {
   
           }
         })
+
    
   }
-  funcoes = [
-    'Diarista',
-    'Eletricista',
-    'Encanador',
-    'Manutenção de Computadores',
-    'Frete',
-    'Montagem de Móveis',
-    'Pintor',
-    'Pedreiro',
-    'Gesseiro',
-    'Jardineiro'
-  ]
+
   cidades =[
     'Juazeiro do Norte',
     'Crato',
     'Barbalha'
   ]
+
+  funcoes = [
+    'Chaveiro',
+    'Diarista - Serviços de Limpeza',
+    'Diarista - Lavar e Passar Roupas',
+    'Diarista - Cozinhar Refeições',
+    'Diarista - Cuidar de Criança',
+    'Eletricista',
+    'Encanador',
+    'Frete',
+    'Gesseiro',
+    'Instalação de Suporte de TV',
+    'Jardineiro',
+    'Manutenção de Computadores',
+    'Manutenção de Bicicletas',
+    'Manutenção de Portão Automático',
+    'Manutenção de Câmera de Vigilância',
+    'Manutenção de Fogão a Gás',
+    'Manutenção de Cadeira de Rodas',
+    'Marceneiro',
+    'Montagem de Móveis',
+    'Pintor',
+    'Pedreiro', 
+    'Reposição de Vidro',
+    'Reposição de Telhas'
+  ]
+
+  categoria =[
+    'Construção Civil',
+    'Diarista',
+    'Instalação',
+    'Manutenção',
+    'Diversos',
+    'Montagem',
+    'Reposição'
+  ]
+
+  servicos= [
+    {
+      categoria:'Diversos',
+      nome:'Chaveiro',
+      id: 'Chaveiro'
+    },
+    {
+      categoria:'Diarista',
+      nome:'Serviços de Limpeza',
+      id: 'Diarista - Serviços de Limpeza'
+    },
+    {
+      categoria:'Diarista',
+      nome:'Lavar e Passar Roupas',
+      id: 'Diarista - Lavar e Passar Roupa'
+    },
+    {
+      categoria:'Diarista',
+      nome:'Cozinhar Refeições',
+      id: 'Diarista - Cozinhar Refeições'
+    },
+    {
+      categoria:'Diarista',
+      nome:'Cuidar de Crianças',
+      id: 'Diarista - Cuidar de Crianças'
+    },
+    {
+      categoria:'Construção Civil',
+      nome:'Eletricista',
+      id: 'Eletricista'
+    },
+    {
+      categoria:'Construção Civil',
+      nome:'Encanador',
+      id: 'Encanador'
+    },
+    {
+      categoria:'Diversos',
+      nome:'Frete',
+      id: 'Frete'
+    },
+    {
+      categoria:'Construção Civil',
+      nome:'Gesseiro',
+      id: 'Gesseiro'
+    },
+    {
+      categoria:'Instalação',
+      nome:'Suporte de TV',
+      id: 'Instalação de Suporte de TV'
+    },
+    {
+      categoria:'Diversos',
+      nome:'Jardineiro',
+      id: 'Jardineiro'
+    },
+    {
+      categoria:'Manutenção',
+      nome:'Computadores',
+      id: 'Manutenção de Computadores'
+    },
+    {
+      categoria:'Manutenção',
+      nome:'Bicicletas',
+      id: 'Manutenção de Bicicletas'
+    },
+    {
+      categoria:'Manutenção',
+      nome:'Portão Automático',
+      id: 'Manutenção de Portão Automático'
+    },
+    {
+      categoria:'Manutenção',
+      nome:'Câmera de Vigilância',
+      id: 'Manutenção de Câmera de Vigilância'
+    },
+    {
+      categoria:'Manutenção',
+      nome:'Fogão a Gás',
+      id: 'Manutenção de Fogão a Gás'
+    },
+    {
+      categoria:'Manutenção',
+      nome:'Cadeira de Rodas',
+      id: 'Manutenção de Cadeira de Rodas'
+    },
+    {
+      categoria:'Diversos',
+      nome:'Marceneiro',
+      id: 'Marceneiro'
+    },
+    {
+      categoria:'Montagem',
+      nome:'Móveis',
+      id: 'Montagem de Móveis'
+    },
+    {
+      categoria:'Construção Civil',
+      nome:'Pintor',
+      id: 'Pintor'
+    },
+    {
+      categoria:'Construção Civil',
+      nome:'Pedreiro',
+      id: 'Pedreiro'
+    },
+    {
+      categoria:'Reposição',
+      nome:'Vidro',
+      id: 'Reposição de Vidro'
+    },
+    {
+      categoria:'Reposição',
+      nome:'Telhas',
+      id: 'Reposição de Telhas'
+    }
+  ]
+selectedCategoria(){
+  this.selected = this.registerform.get('categoria').value
+}
+  
+
+
+
   verTermos(){
     this.navCtrl.push(TermosepoliticaPage);
   }

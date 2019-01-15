@@ -17,7 +17,17 @@
               <ion-icon [name]="v.icone" item-end></ion-icon>
               {{v.nome_servico}}
             </button>
-      </ion-card>      
+      </ion-card>
+     <ion-card  class="card_caixa">
+        <ion-slides pager class="slides_card">
+            <ion-slide *ngFor="let slide of slides">
+              <p [innerHTML]="slide.description"></p>
+            </ion-slide>
+        </ion-slides>
+     </ion-card>
+     
+ 
+      
 
 </ion-content>
 

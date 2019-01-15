@@ -104,22 +104,38 @@
                    
       
               
-              <ion-card>
-                  <ion-item>
-                      <ion-label> Função:</ion-label>
-                      <ion-select multiple="false" formControlName="funcao" >
-                        <div *ngFor="let f of funcoes">
-                            <ion-option value = "{{f}}">{{f}}</ion-option>
+            <ion-card>
+                <ion-item>
+                    <ion-label> Categoria:</ion-label>
+                    <ion-select multiple="false" (ionChange)="selectedCategoria()" formControlName="categoria">
+                        <div *ngFor="let f of categoria">
+                            <ion-option value = "{{f}}" >{{f}}</ion-option>
                         </div>
                         
-                      </ion-select>
-                    </ion-item>
-                    <ion-item *ngIf="this.registerform.get('funcao').invalid">
-                        <p class="form_error">Selecione uma função.</p>
-                    </ion-item>
-              </ion-card>
-              
-                          
+                    </ion-select>
+                   
+                </ion-item>
+                <ion-item *ngIf="selected != null">
+                        <ion-label> Serviço:</ion-label>
+                        <ion-select multiple="false" formControlName="funcao">
+                            
+                            <div *ngFor="let f of servicos">
+                                <div *ngIf="f.categoria == selected">
+                                    <ion-option value = "{{f.id}}" >{{f.nome}}</ion-option>
+                                </div>
+                            </div>  
+                           
+                        </ion-select>
+
+                </ion-item>
+                
+                <ion-item *ngIf="this.registerform.get('funcao').invalid">
+                    <p class="form_error">Selecione uma categoria e um serviço.</p>
+                </ion-item>
+            </ion-card>
+                         
+            
+                   
               <ion-item>
                 <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
               </ion-item>
@@ -144,7 +160,7 @@
             </ion-list>
             <ion-row class="buttonlogin">
               <ion-col col-12 style="text-align: center">
-                  <button type="submit"  ion-button full [disabled]="registerform.invalid" >Cadastrar</button>
+                  <button type="submit"  ion-button full [disabled]="this.registerform.invalid">Cadastrar</button>
               </ion-col>
               <ion-col col-12 style="text-align: center">
                 <p>Ao se cadastrar, você concorda com nossos <a (click)="verTermos()" ><b> Termos e Política de Dados.</b></a></p>

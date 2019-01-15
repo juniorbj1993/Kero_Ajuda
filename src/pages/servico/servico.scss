@@ -1,12 +1,17 @@
 page-servico {
+
+  background-image: url('../../assets/imgs/logo_solta.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  
   .item-inner{
-    color:#313a7f;
+    color:#123879;
   }
   .card-header-md{
-    color:#313a7f;
+    color:#123879;
   }
   .item-md {
-    color: #2d3783;
+    color: #123879;
   }
   
   .menu{
@@ -26,10 +31,37 @@ page-servico {
   .item-block{
    //conteudo interno do botão
   }
-  // .background_servicos{
-  //   background-color: #fbc01a;
-  // }
+
+  .slide-zoom {
+    height: 100%;
+  }
+
+  .slide-title {
+    margin-top: 1.7rem;
+  }
+
+  .slides_card p {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: black;
+  }
+  .slides_card h3 {
+    font-size: 18px;
+    margin-top: 10px !important;
+    color: black;
+  }
+  .slides_card {
+ 
+    
+  }
+  .card_caixa{
+    border-radius: 20px;
+  }
   
+ 
   
 
 }
