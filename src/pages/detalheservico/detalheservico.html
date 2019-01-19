@@ -9,10 +9,10 @@
 
 
 <ion-content padding class="background_detalhe_servico">
-    <ion-list *ngFor="let s of servicos">
+    <ion-list *ngFor="let s of servicos.funcoes">
       <div *ngIf="s.categoria == titulo">
-        <button ion-item (click)="servicoSelected(s.nome_do_servico)">
-              {{s.nome_do_servico}}
+        <button ion-item (click)="servicoSelected(s.id)">
+              {{s.nome}}
               <ion-icon name="ios-arrow-dropright-outline" item-end></ion-icon>
         </button> 
       </div>

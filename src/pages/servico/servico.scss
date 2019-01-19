@@ -1,9 +1,9 @@
 page-servico {
 
-  background-image: url('../../assets/imgs/logo_solta.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  
+  background-image: url('../../assets/imgs/logo_solta.png') !important;
+  background-size: 100% !important;
+  background-repeat: no-repeat !important;
+
   .item-inner{
     color:#123879;
   }
@@ -13,7 +13,7 @@ page-servico {
   .item-md {
     color: #123879;
   }
-  
+
   .menu{
     color:white;
   }
@@ -21,7 +21,7 @@ page-servico {
     width: 40%;
     position: relative;
     margin-left: -20px;
-    
+
   }
   .card_button_servicos{
     margin-bottom: 8%;
@@ -54,14 +54,20 @@ page-servico {
     color: black;
   }
   .slides_card {
- 
-    
+
+
   }
   .card_caixa{
     border-radius: 20px;
   }
-  
- 
-  
+  .card_caixa img{
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 1%;
+    margin-right: 1%;
+  }
+
+
+
 
 }

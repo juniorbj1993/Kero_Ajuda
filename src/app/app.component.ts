@@ -25,9 +25,9 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public storage: Storage,
     private screenOrientation: ScreenOrientation
-     
+
     ) {
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);  
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -38,7 +38,7 @@ export class MyApp {
   }
 
   initializeApp() {
-  
+
     this.platform.ready().then(() => {
     this.storage.get('userId')
     .then((resolve)=>{

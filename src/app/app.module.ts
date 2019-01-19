@@ -1,5 +1,6 @@
 
 
+
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -22,6 +23,8 @@ import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepol
 //models
 import {usuario} from '../users.model';
 import {pds} from '../users.model';
+import { Servicos } from './../funcoes.model';
+
 //serviços
 
 
@@ -92,7 +95,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     usuario,
     AngularFireDatabase,
     pds,
-    ScreenOrientation
+    ScreenOrientation,
+    Servicos
   ]
 })
 export class AppModule {}

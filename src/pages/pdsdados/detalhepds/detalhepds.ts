@@ -10,7 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class DetalhepdsPage {
 dados_pds: Array<object>=[];
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController,
     public navParams: NavParams
     ) {}
 
@@ -19,14 +19,12 @@ dados_pds: Array<object>=[];
       var pds_temp = this.navParams.get('dadospds');
       delete pds_temp.cpf;
       delete pds_temp.rg;
-      delete pds_temp.cidade;
       delete pds_temp.estado;
       delete pds_temp.rua;
       delete pds_temp.numero;
       delete pds_temp.nacionalidade;
       delete pds_temp.naturalidade;
       delete pds_temp.pagamento;
-      delete pds_temp.bairro;
 
       this.dados_pds.push(pds_temp)
     }

@@ -1,4 +1,5 @@
 
+
 //modules
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
@@ -22,6 +23,9 @@ import { ServicoPage } from '../servico/servico';
 import { DetalheservicoPage } from './../detalheservico/detalheservico';
 import { ListapdsPage } from '../pdsdados/listapds/listapds';
 import { DetalhepdsPage } from '../pdsdados/detalhepds/detalhepds';
+
+//models
+import { Servicos } from './../../funcoes.model';
 
 
 
@@ -58,6 +62,9 @@ import { DetalhepdsPage } from '../pdsdados/detalhepds/detalhepds';
     DetalhepdsPage,
     ListapdsPage
 
+  ],
+  providers:[
+    Servicos
   ]
 })
 export class HomePageModule {}
