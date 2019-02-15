@@ -1,5 +1,7 @@
+import { EditardadosPage } from './../editardados/editardados';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
 
 
 
@@ -19,6 +21,8 @@ export class MeusdadosusuarioPage {
     this.dadosusuario = this.navParams.get('dados');
     this.listadousuario.push(this.dadosusuario);
   }
-
+  editar(dados){
+    this.navCtrl.push(EditardadosPage,{dados})
+  }
 
 }

@@ -27,7 +27,7 @@ import { TermosepoliticaPage } from '../termosepolitica/termosepolitica';
 export class CadastrousuarioPage {
 
   registerform: FormGroup;
- 
+
 
   constructor(
     public navCtrl: NavController,

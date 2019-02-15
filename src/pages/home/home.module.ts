@@ -1,5 +1,4 @@
 
-
 //modules
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
@@ -11,6 +10,7 @@ import { ServicoPageModule } from './../servico/servico.module';
 import { DetalheservicoPageModule } from '../detalheservico/detalheservico.module';
 import { ListapdsPageModule } from '../pdsdados/listapds/listapds.module';
 import { DetalhepdsPageModule } from '../pdsdados/detalhepds/detalhepds.module';
+import { EditardadosPageModule } from './../editardados/editardados.module';
 
 
 //pages
@@ -23,9 +23,15 @@ import { ServicoPage } from '../servico/servico';
 import { DetalheservicoPage } from './../detalheservico/detalheservico';
 import { ListapdsPage } from '../pdsdados/listapds/listapds';
 import { DetalhepdsPage } from '../pdsdados/detalhepds/detalhepds';
+import { EditardadosPage } from './../editardados/editardados';
+
+
 
 //models
 import { Servicos } from './../../funcoes.model';
+
+//services
+import { CrudService } from './../../crud.service';
 
 
 
@@ -45,7 +51,8 @@ import { Servicos } from './../../funcoes.model';
     ServicoPageModule,
     DetalheservicoPageModule,
     ListapdsPageModule,
-    DetalhepdsPageModule
+    DetalhepdsPageModule,
+    EditardadosPageModule
 
 
   ],
@@ -60,11 +67,13 @@ import { Servicos } from './../../funcoes.model';
     ServicoPage,
     DetalheservicoPage,
     DetalhepdsPage,
-    ListapdsPage
+    ListapdsPage,
+    EditardadosPage
 
   ],
   providers:[
-    Servicos
+    Servicos,
+    CrudService
   ]
 })
 export class HomePageModule {}
