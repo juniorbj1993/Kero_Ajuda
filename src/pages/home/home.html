@@ -6,8 +6,8 @@
         <ion-icon name="more"></ion-icon>
       </button>
 
-      <ion-title *ngFor="let U of dadosusuario">
-        Olá, {{U.nome}}
+      <ion-title>
+          <img src="../../assets/imgs/logo_head.png" alt="">
       </ion-title>
     </ion-navbar>
 
@@ -16,16 +16,13 @@
 
   <ion-slides pager class="slides">
     <ion-slide>
-        <img src="../../assets/imgs/logo_kero_ajuda.png" class="slide-image"/>
-        <h2 class="slide-title">Para solicitar um serviço toque no botão abaixo.</h2>
-        <br>
-        <div>
-            <ion-card>
-                <button ion-button color="dark" clear full (click)="verPds()" ><img src="../../assets/imgs/logo_solta.png" alt=""> Kero Ajuda</button>
-            </ion-card>
-            
-        </div>
-      
+      <div class="primeiro_slide">
+          <img src="../../assets/imgs/logo_kero_ajuda.png" class="slide-image"/>
+          <br>
+          <div>
+              <button class="button_solicitar" ion-button (click)="verPds()" >Solicitar Serviço</button>
+          </div>
+      </div>
 
     </ion-slide>
     <ion-slide *ngFor="let slide of slides">
@@ -34,9 +31,9 @@
                 <h2 class="slide-title" [innerHTML]="slide.title"></h2>
                 <p [innerHTML]="slide.description"></p>
             </ion-card>
-            
+
     </ion-slide>
-    
+
   </ion-slides>
 
 </ion-content>

@@ -3,10 +3,10 @@ page-homepds {
     position: absolute;
     top: 0;
     left: 0;
-    padding: 0 90px 1px;
+    padding: 24px 130px 18px 34px;
     width: 100%;
     height: 100%;
-    text-align: center;
+    text-align: left;
   }
    .card-md h2{
     color: #123879 !important;
@@ -31,7 +31,7 @@ page-homepds {
   img{
     width: 80%;
     position: relative;
-    
+
   }
   .card-md h2{
     color: black;
@@ -47,14 +47,14 @@ page-homepds {
   .minhaclassificacao{
     width: 100%;
   }
-  
+
   .logo_keroajuda{
     padding: 30px;
   }
 
 
   .slide-zoom {
-    height: 100%;
+    height: 80%;
   }
 
   .slide-title {
@@ -67,6 +67,7 @@ page-homepds {
     margin: 18px 0;
   }
 
-  
+
+
 
 }

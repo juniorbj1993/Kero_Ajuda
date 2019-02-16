@@ -16,37 +16,63 @@
                         <img src="../../assets/imgs/semimagem.jpg" alt="">
                     </ion-card>
                 </ion-col>
-     
+
             </ion-row>
-           
-        <h2>Nome completo:</h2>
+
+        <ion-row>
+            <ion-col>
+                <h2>Nome completo:</h2>
+            </ion-col>
+            <ion-col class="link">
+                <a (click)="editar('nome')">Editar <ion-icon name="create"></ion-icon></a>
+            </ion-col>
+        </ion-row>
         <h4>{{U.nome}} {{U.sobrenome}}</h4>
-        <h2>Telefone:</h2>
+        <br>
+        <ion-row>
+            <ion-col>
+                <h2>Telefone: </h2>
+            </ion-col>
+            <ion-col class="link">
+                <a (click)="editar('telefone')">Editar <ion-icon name="create"></ion-icon></a>
+            </ion-col>
+        </ion-row>
         <h4>{{U.telefone}}</h4>
+        <br>
         <h2>Email:</h2>
         <h4>{{U.email}}</h4>
+        <br>
         <h2>Data de nascimento:</h2>
         <h4>{{U.datadenascimento}}</h4>
-        
-                <ion-row>
-                        <ion-col col-6>
-                            <h2>CPF:</h2>
-                            <h4>{{U.cpf}}</h4>
-                        </ion-col >
-                        <ion-col col-6>
-                            <h2>RG:</h2>
-                            <h4>{{U.rg}}</h4>
-                        </ion-col>
-                    </ion-row>
-           
+        <br>
+            <ion-row>
+                    <ion-col col-6>
+                        <h2>CPF:</h2>
+                        <h4>{{U.cpf}}</h4>
+                    </ion-col >
+                    <ion-col col-6>
+                        <h2>RG:</h2>
+                        <h4>{{U.rg}}</h4>
+                    </ion-col>
+            </ion-row>
 
-         
-          
-          
+
+
+
+
           <h2>Função:</h2>
           <h4>{{U.funcao}}</h4>
-          <h2>Endereço:</h2>
+          <br>
+          <ion-row>
+              <ion-col>
+                  <h2>Endereço: </h2>
+              </ion-col>
+              <ion-col class="link">
+                  <a (click)="editar('endereço')">Editar <ion-icon name="create"></ion-icon></a>
+              </ion-col>
+          </ion-row>
           <h4>{{U.rua}}, {{U.numero}}, {{U.bairro}}, {{U.cidade}} - {{U.estado}}</h4>
+          <br>
           <h2>Nacionalidade / Naturalidade:</h2>
           <h4>{{U.nacionalidade}} / {{U.naturalidade}}</h4>
 

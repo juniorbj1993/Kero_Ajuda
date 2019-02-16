@@ -31,15 +31,15 @@ export class ConfiguracoesPage {
      public loadingCtrl: LoadingController
      ) {
 
-     
+
   }
 
   ionViewDidLoad() {
     let loader = this.loadingCtrl.create({
       content: "Por favor aguarde..."
-    });  
+    });
     loader.present();
-    
+
     this.storage.get('userId')
     .then((resposta)=>{
       this.db.database.ref(`UserData/${resposta}`)
@@ -49,7 +49,7 @@ export class ConfiguracoesPage {
           this.dadosusuario = childSnapshot.val();
           loader.dismiss();
           this.user_type_pds = false;
-          
+
           this.rootPage = HomePage;
         })
       })
@@ -80,7 +80,7 @@ export class ConfiguracoesPage {
   openContactPage(){
     this.navCtrl.push(ContatoPage);
   }
- 
+
   meusDadosPage(){
     this.navCtrl.push(MeusdadosPage,{
       dados: this.dadosusuario
@@ -101,20 +101,18 @@ export class ConfiguracoesPage {
       })
   }
   meusDadosPage_User(){
-    this.navCtrl.push(MeusdadosusuarioPage,{
-      dados: this.dadosusuario
-    });
+    this.navCtrl.push(MeusdadosusuarioPage);
   }
   termosDeUso(){
 
   }
   politicaDePrivacidade(){
-    
+
   }
   verTermos(){
     this.navCtrl.push(TermosepoliticaPage);
   }
 
-  
+
 
 }

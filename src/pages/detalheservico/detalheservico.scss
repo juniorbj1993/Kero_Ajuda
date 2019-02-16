@@ -1,9 +1,15 @@
 page-detalheservico {
+
+    .servicos_ofertados{
+        padding: 10px;
+    }
+
+  .fixed-content{
     background-position: 50%;
     background-image: url('../../assets/imgs/logo_kero_ajuda.png');
     background-size: 80%;
     background-repeat: no-repeat;
-    .servicos_ofertados{
-        padding: 10px;
-    }
+    opacity: .5;
+  }
+
 }

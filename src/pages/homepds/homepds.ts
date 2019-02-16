@@ -40,7 +40,7 @@ export class HomepdsPage {
       title: "Qual a finalidade do Kero AJuda?",
       description: "Proporcionar facilidade e agilidade para conectar a mais completa plataforma de serviços especializados a quem precisar, criando uma relação sustentável e de confiança entre cliente e profissional.",
       image: "../../assets/imgs/logo_kero_ajuda.png",
-      
+
     },
     {
       title: "Para Pensar!",
