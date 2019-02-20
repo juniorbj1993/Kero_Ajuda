@@ -41,9 +41,9 @@ export class LoginPage {
 
 
   ionViewDidLoad() {
-    // this.network.onDisconnect().subscribe(data  => {
-    //   console.log(data.type);
-    //  }, error  =>  console.log(error));
+    this.network.onDisconnect().subscribe(data  => {
+      console.log(data.type);
+     }, error  =>  console.log(error));
 
   }
   login(){

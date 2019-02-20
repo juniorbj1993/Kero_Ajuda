@@ -1,6 +1,4 @@
 
-
-
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
