@@ -1,3 +1,4 @@
+import { Network } from '@ionic-native/network';
 import { ConfiguracoesPage } from './../configuracoes/configuracoes';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -26,8 +27,9 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public storage: Storage,
     public afAuth: AngularFireAuth,
-    public loadingCtrl: LoadingController
-  
+    public loadingCtrl: LoadingController,
+    private network: Network
+
 
     ) {
 
@@ -37,7 +39,12 @@ export class LoginPage {
       })
   }
 
+
   ionViewDidLoad() {
+    // this.network.onDisconnect().subscribe(data  => {
+    //   console.log(data.type);
+    //  }, error  =>  console.log(error));
+
   }
   login(){
 

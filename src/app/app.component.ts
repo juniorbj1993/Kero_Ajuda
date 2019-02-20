@@ -1,3 +1,4 @@
+
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { ConfiguracoesPage } from './../pages/configuracoes/configuracoes';
 import { Component, ViewChild } from '@angular/core';
