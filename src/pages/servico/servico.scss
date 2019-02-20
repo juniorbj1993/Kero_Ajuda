@@ -1,8 +1,11 @@
 page-servico {
+  .fixed-content{
+    background-image: url('../../assets/imgs/logo_solta.png') !important;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    opacity: .5;
+  }
 
-  background-image: url('../../assets/imgs/logo_solta.png') !important;
-  background-size: 100% !important;
-  background-repeat: no-repeat !important;
 
   .item-inner{
     color:#123879;

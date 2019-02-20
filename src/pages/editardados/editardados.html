@@ -9,5 +9,101 @@
 
 
 <ion-content padding>
+  <ion-card>
+      <ion-card-content >
+        <h5 class="informativo">Antes de confirmar as modificações dos dados verifique se os mesmos estão corretos!</h5>
+        <h5 class="informativo">OBS: Os dados alterados só serão atualizados após retornar à tela inicial!</h5>
+      </ion-card-content>
+
+  </ion-card>
+    <ion-card>
+        <ion-card-content>
+          <div *ngIf="this.dados == 'telefone'">
+              <form [formGroup]="registerform_telefone" (ngSubmit)="editarDadosOK()">
+                <ion-list>
+                  <ion-item>
+                      <ion-input type="tel" placeholder="Telefone" formControlName="telefone" name="telefone" [brmasker]="{mask:'(00)00000-0000', len:14}" ></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="this.registerform_telefone.get('telefone').invalid && this.registerform_telefone.get('telefone').touched">
+                        <p class="form_error">Campo inválido.</p>
+                    </ion-item>
+                </ion-list>
+                <button type="submit"  ion-button full [disabled]="registerform_telefone.invalid">Editar Dados</button>
+              </form>
+          </div>
+
+
+          <div *ngIf="this.dados == 'nome'">
+              <form [formGroup]="registerform_nome" (ngSubmit)="editarDadosOK()">
+                <ion-list>
+                    <ion-item>
+                        <ion-input type="text" placeholder="Nome" formControlName="nome"></ion-input>
+                      </ion-item>
+                      <ion-item *ngIf="this.registerform_nome.get('nome').invalid && this.registerform_nome.get('nome').touched">
+                          <p class="form_error">Campo inválido.</p>
+                      </ion-item>
+                      <ion-item>
+                        <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
+                      </ion-item>
+                      <ion-item *ngIf="this.registerform_nome.get('sobrenome').invalid && this.registerform_nome.get('sobrenome').touched">
+                        <p class="form_error">Campo inválido.</p>
+                    </ion-item>
+                </ion-list>
+                <button type="submit"  ion-button full [disabled]="registerform_nome.invalid">Editar Dados</button>
+              </form>
+          </div>
+
+
+          <div *ngIf="this.dados == 'endereço'">
+              <form [formGroup]="registerform_endereco" (ngSubmit)="editarDadosOK()">
+                <ion-list>
+                    <ion-card>
+                        <ion-item>
+                            <ion-label> Estado:</ion-label>
+                            <ion-select multiple="false" formControlName="estado">
+                              <ion-option value = "Ceará">Ceará</ion-option>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item *ngIf="this.registerform_endereco.get('estado').invalid">
+                            <p class="form_error">Selecione um estado.</p>
+                        </ion-item>
+                        <ion-item>
+                            <ion-label> Cidade:</ion-label>
+                            <ion-select multiple="false" formControlName="cidade">
+                              <div *ngFor="let c of cidades">
+                                  <ion-option value = "{{c}}">{{c}}</ion-option>
+                              </div>
+                            </ion-select>
+                        </ion-item>
+                        <ion-item *ngIf="this.registerform_endereco.get('cidade').invalid">
+                            <p class="form_error">Selecione uma cidade.</p>
+                        </ion-item>
+
+                    </ion-card>
+                    <ion-item>
+                      <ion-input type="text" placeholder="Rua" formControlName="rua"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="this.registerform_endereco.get('rua').invalid && this.registerform_endereco.get('rua').touched">
+                        <p class="form_error">Campo inválido.</p>
+                    </ion-item>
+                    <ion-item>
+                      <ion-input type="number" placeholder="Número da residência" formControlName="numero"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="this.registerform_endereco.get('numero').invalid && this.registerform_endereco.get('numero').touched">
+                        <p class="form_error">Campo inválido.</p>
+                    </ion-item>
+
+                    <ion-item>
+                        <ion-input type="text" placeholder="Bairro" formControlName="bairro"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="this.registerform_endereco.get('bairro').invalid && this.registerform_endereco.get('bairro').touched">
+                        <p class="form_error">Campo inválido.</p>
+                    </ion-item>
+                </ion-list>
+                <button type="submit"  ion-button full [disabled]="registerform_endereco.invalid">Editar Dados</button>
+              </form>
+          </div>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

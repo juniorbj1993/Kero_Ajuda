@@ -13,6 +13,7 @@ import { DetalhepdsPageModule } from '../pdsdados/detalhepds/detalhepds.module';
 import { EditardadosPageModule } from './../editardados/editardados.module';
 
 
+
 //pages
 import { ConfiguracoesPage } from './../configuracoes/configuracoes';
 import { HomePage } from './home';

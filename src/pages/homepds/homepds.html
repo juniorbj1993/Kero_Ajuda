@@ -5,15 +5,15 @@
       <ion-icon name="more"></ion-icon>
     </button>
 
-    <ion-title *ngFor="let U of dadosusuario">
-      Olá, {{U.nome}}
+    <ion-title >
+        <img src="../../assets/imgs/logo_head.png" alt="">
     </ion-title>
   </ion-navbar>
 
 
 </ion-header>
 <ion-content padding>
-        
+
     <ion-slides pager class="slides">
             <ion-slide *ngFor="let slide of slides">
                     <img [src]="slide.image" class="slide-image"/>
@@ -29,12 +29,12 @@
                         <h3><ion-icon name="star"></ion-icon> = {{estrelas.estrelas.otimo}}</h3>
                         <h3><ion-icon name="star-half"></ion-icon> = {{estrelas.estrelas.bom}}</h3>
                         <h3><ion-icon name="star-outline"></ion-icon> = {{estrelas.estrelas.ruim}}</h3>
-                        
+
                     </div>
-                                       
+
                 </div>
 
             </ion-slide>
-         
+
     </ion-slides>
 </ion-content>
