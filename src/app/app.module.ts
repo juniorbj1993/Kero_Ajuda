@@ -1,6 +1,4 @@
 
-
-
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -17,6 +15,7 @@ import { SobrePageModule } from './../pages/sobre/sobre.module';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { BrMaskerModule } from 'brmasker-ionic-3';
 import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepolitica.module';
+import { Network } from '@ionic-native/network';
 
 
 
@@ -96,7 +95,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AngularFireDatabase,
     pds,
     ScreenOrientation,
-    Servicos
+    Servicos,
+    Network
   ]
 })
 export class AppModule {}

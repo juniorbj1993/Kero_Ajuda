@@ -1,3 +1,4 @@
+
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { ConfiguracoesPage } from './../pages/configuracoes/configuracoes';
 import { Component, ViewChild } from '@angular/core';
@@ -27,7 +28,7 @@ export class MyApp {
     private screenOrientation: ScreenOrientation
 
     ) {
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.initializeApp();
 
     // used for an example of ngFor and navigation
