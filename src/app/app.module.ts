@@ -16,6 +16,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { BrMaskerModule } from 'brmasker-ionic-3';
 import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepolitica.module';
 import { Network } from '@ionic-native/network';
+import {ResetarsenhaPageModule} from './../pages/resetarsenha/resetarsenha.module';
 
 
 
@@ -38,6 +39,7 @@ import { HomePage } from '../pages/home/home';
 import { HomepdsPage } from './../pages/homepds/homepds';
 import { SobrePage } from '../pages/sobre/sobre';
 import { TermosepoliticaPage } from './../pages/termosepolitica/termosepolitica';
+import { ResetarsenhaPage } from '../pages/resetarsenha/resetarsenha';
 
 
 
@@ -67,7 +69,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomepdsPageModule,
     SobrePageModule,
     BrMaskerModule,
-    TermosepoliticaPageModule
+    TermosepoliticaPageModule,
+    ResetarsenhaPageModule
 
 
 
@@ -81,7 +84,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     HomepdsPage,
     SobrePage,
-    TermosepoliticaPage
+    TermosepoliticaPage,
+    ResetarsenhaPage
 
 
   ],

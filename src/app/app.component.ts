@@ -64,7 +64,7 @@ export class MyApp {
         if (x == 1){
           loader.dismiss()
         }
-       
+
        }, error  =>  console.log(error));
     this.storage.get('userId')
     .then((resolve)=>{
@@ -83,7 +83,7 @@ export class MyApp {
 
     });
   }
-  
+
 
   openPage(page) {
     this.nav.setRoot(page.component);

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { LoadingController, AlertController } from 'ionic-angular';
+import { usuario } from './users.model';
 @Injectable()
 export class CrudService {
   keydadosuser: string;
@@ -79,6 +80,24 @@ export class CrudService {
 
 
 
+  }
+
+  getListUser(iduser: string): Promise<any>{
+    return new Promise((resolve, reject)=>{
+      this.db.database.ref(`UserData/${iduser}`)
+      .once('value')
+      .then((snapshot: any)=>{
+        let dados: Array<any> = []
+        snapshot.forEach((childSnapshot: any)=>{
+            let dadosUsuario: usuario = childSnapshot.val()
+            dados.push(dadosUsuario)
+        })
+        resolve(dados)
+      })
+      .catch((erro)=>{
+        console.log(erro.code)
+      })
+    })
   }
 
   // getAll() {

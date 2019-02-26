@@ -110,6 +110,7 @@ export class CadastroPdsPage {
               const alert = this.alertCtrl.create({
                 title: 'Bem vindo ao Kero Ajuda, '+ this.registerform.value.nome,
                 subTitle: 'Sua conta foi criada com sucesso!',
+                cssClass: "confirmacao_conta",
                 buttons: ['OK']
               });
               alert.present();
@@ -123,7 +124,8 @@ export class CadastroPdsPage {
               const toast = this.toastCtrl.create({
               message: "Email já cadastrado, digite outro Email!",
               duration: 5000,
-              position: 'top'
+              position: 'top',
+              cssClass:"toastError"
               });
               toast.present();
               this.registerform.value.email = null;

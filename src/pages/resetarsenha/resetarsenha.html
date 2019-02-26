@@ -1,0 +1,37 @@
+
+<ion-content padding>
+    <ion-grid class="arrowreturn">
+        <h5  navPop><ion-icon name="md-arrow-back">  Voltar</ion-icon></h5>
+    </ion-grid>
+    <ion-row class="logo">
+        <ion-col col-12>
+            <img  src="../../assets/imgs/logo_kero_ajuda.png"/>
+        </ion-col>
+    </ion-row>
+    <div class="aviso">
+        <h1>Recuperação de conta</h1>
+        <p>Para resetar sua senha digite seu Email cadastrado no Kero AJuda.</p>
+    </div>
+
+    <ion-card>
+          <ion-grid>
+            <form [formGroup]="registerform" (ngSubmit)="resetSenha()">
+              <ion-list>
+                  <ion-item>
+                      <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
+                    </ion-item>
+                    <ion-item *ngIf="this.registerform.get('email').invalid && this.registerform.get('email').touched">
+                        <p class="form_error">Email inválido</p>
+                    </ion-item>
+              </ion-list>
+              <ion-row class="buttonlogin">
+                  <ion-col col-12 style="text-align: center">
+                      <button type="submit"  ion-button full [disabled]="registerform.invalid">Resetar minha senha</button>
+                  </ion-col>
+              </ion-row>
+            </form>
+          </ion-grid>
+    </ion-card>
+
+
+</ion-content>

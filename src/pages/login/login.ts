@@ -1,4 +1,3 @@
-import { Network } from '@ionic-native/network';
 import { ConfiguracoesPage } from './../configuracoes/configuracoes';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -9,6 +8,7 @@ import { Storage } from '@ionic/storage';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
 import { LoadingController } from 'ionic-angular';
+import { ResetarsenhaPage } from '../resetarsenha/resetarsenha';
 
 
 @IonicPage()
@@ -27,8 +27,7 @@ export class LoginPage {
     public toastCtrl: ToastController,
     public storage: Storage,
     public afAuth: AngularFireAuth,
-    public loadingCtrl: LoadingController,
-    private network: Network
+    public loadingCtrl: LoadingController
 
 
     ) {
@@ -41,7 +40,7 @@ export class LoginPage {
 
 
   ionViewDidLoad() {
-    
+
   }
 
   login(){
@@ -78,6 +77,10 @@ export class LoginPage {
   }
   cadastrarpds(){
     this.navCtrl.push(CadastroPdsPage);
+  }
+  esqueceuSenha(){
+    this.navCtrl.push(ResetarsenhaPage);
+
   }
 
 
