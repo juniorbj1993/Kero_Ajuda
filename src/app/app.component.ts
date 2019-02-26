@@ -46,7 +46,7 @@ export class MyApp {
 
   initializeApp() {
     let loader;
-    let x= 0;
+    let x = 0;
     this.platform.ready().then(() => {
       this.network.onDisconnect().subscribe(data  => {
         const toast = this.toastCtrl.create({
