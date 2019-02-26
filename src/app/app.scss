@@ -17,4 +17,12 @@
 .button-md{
   text-transform: none;
 }
+.toastError {
+  .toast-wrapper {
+    background: rgb(121, 0, 0);
+    opacity: 0.8;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
 

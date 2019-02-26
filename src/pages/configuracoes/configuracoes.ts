@@ -39,7 +39,7 @@ export class ConfiguracoesPage {
       content: "Por favor aguarde..."
     });
     loader.present();
-
+    //buscar dados de usuário
     this.storage.get('userId')
     .then((resposta)=>{
       this.db.database.ref(`UserData/${resposta}`)
@@ -49,7 +49,6 @@ export class ConfiguracoesPage {
           this.dadosusuario = childSnapshot.val();
           loader.dismiss();
           this.user_type_pds = false;
-
           this.rootPage = HomePage;
         })
       })

@@ -41,11 +41,9 @@ export class LoginPage {
 
 
   ionViewDidLoad() {
-    this.network.onDisconnect().subscribe(data  => {
-      console.log(data.type);
-     }, error  =>  console.log(error));
-
+    
   }
+
   login(){
 
     const loader = this.loadingCtrl.create({
@@ -67,7 +65,8 @@ export class LoginPage {
           const toast = this.toastCtrl.create({
             message: "Credenciais incorretas, tente novamente!",
             duration: 5000,
-            position: 'top'
+            position: 'top',
+            cssClass:"toastError"
             });
             toast.present();
         }
