@@ -10,6 +10,7 @@ import { IonicPage, NavController, NavParams, LoadingController} from 'ionic-ang
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { TermosepoliticaPage } from './../termosepolitica/termosepolitica';
+import { networkVerify } from '../../network.service';
 
 
 @IonicPage()
@@ -28,13 +29,16 @@ export class ConfiguracoesPage {
      public afAuth: AngularFireAuth,
      public storage: Storage,
      public db: AngularFireDatabase,
-     public loadingCtrl: LoadingController
+     public loadingCtrl: LoadingController,
+     public connection: networkVerify
      ) {
 
 
   }
 
   ionViewDidLoad() {
+    this.connection.connected()
+    this.connection.disconnected()
     let loader = this.loadingCtrl.create({
       content: "Por favor aguarde..."
     });

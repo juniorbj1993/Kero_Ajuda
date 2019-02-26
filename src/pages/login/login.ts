@@ -9,6 +9,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
 import { LoadingController } from 'ionic-angular';
 import { ResetarsenhaPage } from '../resetarsenha/resetarsenha';
+import {networkVerify} from '../../network.service'
 
 
 @IonicPage()
@@ -24,10 +25,11 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public formbuider: FormBuilder,
-    public toastCtrl: ToastController,
     public storage: Storage,
-    public afAuth: AngularFireAuth,
-    public loadingCtrl: LoadingController
+    private afAuth: AngularFireAuth,
+    public loadingCtrl: LoadingController,
+    public toastCtrl: ToastController,
+    public connection: networkVerify
 
 
     ) {
@@ -40,7 +42,9 @@ export class LoginPage {
 
 
   ionViewDidLoad() {
-
+    this.connection.connected()
+    this.connection.disconnected()
+    
   }
 
   login(){

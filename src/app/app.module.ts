@@ -26,6 +26,7 @@ import {pds} from '../users.model';
 import { Servicos } from './../funcoes.model';
 
 //serviços
+import {networkVerify} from '../network.service'
 
 
 
@@ -100,7 +101,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     pds,
     ScreenOrientation,
     Servicos,
-    Network
+    Network,
+    networkVerify
   ]
 })
 export class AppModule {}

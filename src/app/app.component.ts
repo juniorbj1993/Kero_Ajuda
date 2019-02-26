@@ -9,7 +9,7 @@ import { LoginPage } from '../pages/login/login';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
-import { Network } from '@ionic-native/network';
+
 
 
 
@@ -30,7 +30,7 @@ export class MyApp {
     public storage: Storage,
     private screenOrientation: ScreenOrientation,
     public loadingCtrl: LoadingController,
-    private network: Network,
+
     public toastCtrl: ToastController
 
     ) {
@@ -45,26 +45,6 @@ export class MyApp {
   }
 
   initializeApp() {
-    let loader;
-    let x = 0;
-    let disconnected = this.network.onDisconnect().subscribe(data  => {
-      const toast = this.toastCtrl.create({
-        message: "Não há conexão com a internet!",
-        duration: 5000,
-        position: 'top',
-        cssClass:"toastError"
-        });
-        toast.present();
-        loader = this.loadingCtrl.create({content: "Aguarde por favor..."});
-        loader.present();
-        x = 1;
-     }, error  =>  console.log(error));
-    let connected = this.network.onConnect().subscribe(data  => {
-      if (x == 1){
-        loader.dismiss()
-      }
-
-     }, error  =>  console.log(error));
     this.platform.ready().then(() => {
     this.storage.get('userId')
     .then((resolve)=>{

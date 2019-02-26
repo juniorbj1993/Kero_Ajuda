@@ -24,10 +24,12 @@ export class HomePage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private storage: Storage,
-    public db: AngularFireDatabase
+    public db: AngularFireDatabase,
+    
     ) {}
 
   ionViewDidLoad() {
+   
     this.storage.get('userId')
     .then((resposta)=>{
       this.getListUsers(resposta)
