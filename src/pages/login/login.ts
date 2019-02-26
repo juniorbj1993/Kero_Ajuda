@@ -56,7 +56,6 @@ export class LoginPage {
           .then(()=>{
             loader.dismiss();
             this.navCtrl.setRoot(ConfiguracoesPage);
-
           })
       })
       .catch((erro)=>{

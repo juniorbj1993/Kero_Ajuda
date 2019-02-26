@@ -71,8 +71,6 @@ export class CadastroPdsPage {
 
 
   ionViewDidLoad() {
-    console.log(this.servicos.funcoes)
-
 
   }
 
