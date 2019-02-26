@@ -1,3 +1,4 @@
+import { CrudService } from './../../crud.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditardadosPage } from '../editardados/editardados';
@@ -18,14 +19,15 @@ export class MeusdadosPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public storage: Storage,
-    public db: AngularFireDatabase
+    public db: AngularFireDatabase,
+    private crud: CrudService
     ) {
   }
 
   ionViewDidLoad() {
     this.storage.get('userId')
     .then((resposta)=>{
-      this.getListUsers(resposta)
+      this.crud.getListUser(resposta)
       .then((resultado)=>{
         this.listadousuario = resultado
       })
@@ -36,23 +38,6 @@ export class MeusdadosPage {
     this.navCtrl.push(EditardadosPage,{dados, usuario: this.usuario})
   }
 
-  getListUsers(iduser: string): Promise<any>{
-    return new Promise((resolve, reject)=>{
-      this.db.database.ref(`PdsData/${iduser}`)
-      .once('value')
-      .then((snapshot: any)=>{
-        let dados: Array<any> = []
-        snapshot.forEach((childSnapshot: any)=>{
-            let dadosUsuario: usuario = childSnapshot.val()
-            dados.push(dadosUsuario)
-        })
-        resolve(dados)
-      })
-      .catch((erro)=>{
-        console.log(erro.code)
-      })
-    })
 
-  }
 
 }

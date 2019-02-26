@@ -47,25 +47,25 @@ export class MyApp {
   initializeApp() {
     let loader;
     let x = 0;
-    this.platform.ready().then(() => {
-      this.network.onDisconnect().subscribe(data  => {
-        const toast = this.toastCtrl.create({
-          message: "Não há conexão com a internet!",
-          duration: 5000,
-          position: 'top',
-          cssClass:"toastError"
-          });
-          toast.present();
-          loader = this.loadingCtrl.create({content: "Aguarde por favor..."});
-          loader.present();
-          x = 1;
-       }, error  =>  console.log(error));
-      this.network.onConnect().subscribe(data  => {
-        if (x == 1){
-          loader.dismiss()
-        }
+    let disconnected = this.network.onDisconnect().subscribe(data  => {
+      const toast = this.toastCtrl.create({
+        message: "Não há conexão com a internet!",
+        duration: 5000,
+        position: 'top',
+        cssClass:"toastError"
+        });
+        toast.present();
+        loader = this.loadingCtrl.create({content: "Aguarde por favor..."});
+        loader.present();
+        x = 1;
+     }, error  =>  console.log(error));
+    let connected = this.network.onConnect().subscribe(data  => {
+      if (x == 1){
+        loader.dismiss()
+      }
 
-       }, error  =>  console.log(error));
+     }, error  =>  console.log(error));
+    this.platform.ready().then(() => {
     this.storage.get('userId')
     .then((resolve)=>{
       if(resolve.length > 0){
