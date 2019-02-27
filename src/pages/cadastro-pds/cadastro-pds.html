@@ -157,16 +157,18 @@
                 <ion-item *ngIf="this.registerform.get('confirmarsenha').invalid && this.registerform.get('confirmarsenha').touched  && this.registerform.get('confirmarsenha').dirty">
                     <p class="form_error">As senhas não conferem.</p>
                 </ion-item>
+                <re-captcha (resolved)="resolved($event)" siteKey="6LdFapQUAAAAAF3mnxbZvFAoHNbPezUtbPaC1avi"></re-captcha>
             </ion-list>
             <ion-row class="buttonlogin">
               <ion-col col-12 style="text-align: center">
-                  <button type="submit"  ion-button full [disabled]="this.registerform.invalid">Cadastrar</button>
+                  <button type="submit"  ion-button full [disabled]="this.registerform.invalid||this.captchaok==false">Cadastrar</button>
               </ion-col>
               <ion-col col-12 style="text-align: center">
                 <p>Ao se cadastrar, você concorda com nossos <a (click)="verTermos()" ><b> Termos e Política de Dados.</b></a></p>
               </ion-col>
             </ion-row>
           </form>
+          
         </ion-grid>
       </ion-card-content>
 

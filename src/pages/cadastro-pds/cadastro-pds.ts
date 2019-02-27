@@ -23,9 +23,11 @@ import { Servicos } from '../../funcoes.model';
   templateUrl: 'cadastro-pds.html',
 })
 export class CadastroPdsPage {
+  
 
   registerform: FormGroup;
   selected = null;
+  captchaok: boolean;
 
 
 
@@ -171,6 +173,10 @@ selectedCategoria(){
   verTermos(){
     this.navCtrl.push(TermosepoliticaPage);
   }
-
+  resolved(captchaResponse: string) {
+    console.log(`Resolved captcha with response ${captchaResponse}:`);
+    this.captchaok = true;
+    console.log(this.captchaok)
+  }
 
 }

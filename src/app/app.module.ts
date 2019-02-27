@@ -17,6 +17,7 @@ import { BrMaskerModule } from 'brmasker-ionic-3';
 import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepolitica.module';
 import { Network } from '@ionic-native/network';
 import {ResetarsenhaPageModule} from './../pages/resetarsenha/resetarsenha.module';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 
 
@@ -71,7 +72,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     SobrePageModule,
     BrMaskerModule,
     TermosepoliticaPageModule,
-    ResetarsenhaPageModule
+    ResetarsenhaPageModule,
+    RecaptchaModule.forRoot(),
 
 
 
