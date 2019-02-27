@@ -34,7 +34,7 @@ export class MyApp {
     public toastCtrl: ToastController
 
     ) {
-    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -46,18 +46,18 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-    this.storage.get('userId')
-    .then((resolve)=>{
-      if(resolve.length > 0){
-        this.rootPage = ConfiguracoesPage;
-      }
-      else{
-        this.rootPage = LoginPage;
-      }
-    })
-    .catch(()=>{
-      this.rootPage = LoginPage;
-    })
+        this.storage.get('userId')
+        .then((resolve)=>{
+          if(resolve.length > 0){
+            this.rootPage = ConfiguracoesPage;
+          }
+          else{
+            this.rootPage = LoginPage;
+          }
+        })
+        .catch(()=>{
+          this.rootPage = LoginPage;
+        })
       this.statusBar.styleDefault();
       this.splashScreen.hide();
 
