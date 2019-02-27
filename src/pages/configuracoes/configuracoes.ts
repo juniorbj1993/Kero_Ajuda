@@ -6,11 +6,11 @@ import { Storage } from '@ionic/storage';
 import { LoginPage } from './../login/login';
 import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController} from 'ionic-angular';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { TermosepoliticaPage } from './../termosepolitica/termosepolitica';
-import { networkVerify } from '../../network.service';
+
 
 
 @IonicPage()
@@ -30,15 +30,14 @@ export class ConfiguracoesPage {
      public storage: Storage,
      public db: AngularFireDatabase,
      public loadingCtrl: LoadingController,
-     public connection: networkVerify
+     public toastCtrl: ToastController
      ) {
 
 
   }
 
   ionViewDidLoad() {
-    this.connection.connected()
-    this.connection.disconnected()
+
     let loader = this.loadingCtrl.create({
       content: "Por favor aguarde..."
     });
@@ -58,7 +57,13 @@ export class ConfiguracoesPage {
       })
       .catch((erro)=>{
         loader.dismiss();
-        console.log(erro.code)
+        const toast = this.toastCtrl.create({
+          message: "Ocorreu um erro na solicitação!",
+          duration: 5000,
+          position: 'top',
+          cssClass:"toastError"
+          });
+          toast.present();
       })
 
       this.db.database.ref(`PdsData/${resposta}`)

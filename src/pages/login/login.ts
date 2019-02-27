@@ -9,7 +9,7 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import { CadastroPdsPage } from '../cadastro-pds/cadastro-pds';
 import { LoadingController } from 'ionic-angular';
 import { ResetarsenhaPage } from '../resetarsenha/resetarsenha';
-import {networkVerify} from '../../network.service'
+
 
 
 @IonicPage()
@@ -28,8 +28,7 @@ export class LoginPage {
     public storage: Storage,
     private afAuth: AngularFireAuth,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController,
-    public connection: networkVerify
+    public toastCtrl: ToastController
 
 
     ) {
@@ -42,9 +41,8 @@ export class LoginPage {
 
 
   ionViewDidLoad() {
-    this.connection.connected()
-    this.connection.disconnected()
-    
+
+
   }
 
   login(){
@@ -66,6 +64,14 @@ export class LoginPage {
         if(erro.code == 'auth/wrong-password' || erro.code ==  'auth/user-not-found' ){
           const toast = this.toastCtrl.create({
             message: "Credenciais incorretas, tente novamente!",
+            duration: 5000,
+            position: 'top',
+            cssClass:"toastError"
+            });
+            toast.present();
+        }else{
+          const toast = this.toastCtrl.create({
+            message: "Ocorreu um erro na solicitação!",
             duration: 5000,
             position: 'top',
             cssClass:"toastError"

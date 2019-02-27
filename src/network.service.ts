@@ -5,7 +5,6 @@ import { Network } from '@ionic-native/network';
 @Injectable()
 export class networkVerify{
     loader;
-    x = 0;
     constructor(
         public loadingCtrl: LoadingController,
         public alertCtrl: AlertController,
@@ -13,15 +12,11 @@ export class networkVerify{
         public toastCtrl: ToastController
 
         ) { }
-        
-    connected(){
-        this.network.onConnect().subscribe(data  => {
-            if (this.x == 1){
-              this.loader.dismiss()
-            }
-           }, error  =>  console.log(error));
-    }
-    disconnected(){
+
+    isConnected(){
+      this.network.onConnect().subscribe(data  => {
+        console.log('com rede!');
+       }, error  =>  console.log(error));
         this.network.onDisconnect().subscribe(data  => {
             const toast = this.toastCtrl.create({
               message: "Não há conexão com a internet!",
@@ -30,9 +25,8 @@ export class networkVerify{
               cssClass:"toastError"
               });
               toast.present();
-              this.loader = this.loadingCtrl.create({content: "Conectando com a internet..."});
-              this.loader.present();
-              this.x = 1;
            }, error  =>  console.log(error));
+
+
     }
 }

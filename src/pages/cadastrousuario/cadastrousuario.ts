@@ -124,6 +124,14 @@ export class CadastrousuarioPage {
             this.registerform.value.confirmarsenha = null;
 
 
+        }else{
+          const toast = this.toastCtrl.create({
+            message: "Ocorreu um erro na solicitação!",
+            duration: 5000,
+            position: 'top',
+            cssClass:"toastError"
+            });
+            toast.present();
         }
       })
 

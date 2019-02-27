@@ -133,6 +133,14 @@ export class CadastroPdsPage {
               this.registerform.value.confirmarsenha = null;
               this.servicos.funcoes
 
+          }else{
+            const toast = this.toastCtrl.create({
+              message: "Ocorreu um erro na solicitação!",
+              duration: 5000,
+              position: 'top',
+              cssClass:"toastError"
+              });
+              toast.present();
           }
         })
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
-import { LoadingController, AlertController } from 'ionic-angular';
+import { LoadingController, AlertController, ToastController } from 'ionic-angular';
 import { usuario } from './users.model';
 @Injectable()
 export class CrudService {
@@ -10,6 +10,7 @@ export class CrudService {
     public db: AngularFireDatabase,
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
+    public toastCtrl: ToastController,
     ) { }
 
   // insert(dado: string) {
@@ -39,12 +40,25 @@ export class CrudService {
 
               .catch((error: any) => {
                 loader.dismiss();
-                console.error(error);
+                const toast = this.toastCtrl.create({
+                  message: "Ocorreu um erro na solicitação!",
+                  duration: 5000,
+                  position: 'top',
+                  cssClass:"toastError"
+                  });
+                  toast.present();
               });
           })
       })
       .catch(()=>{
         loader.dismiss();
+        const toast = this.toastCtrl.create({
+          message: "Ocorreu um erro na solicitação!",
+          duration: 5000,
+          position: 'top',
+          cssClass:"toastError"
+          });
+          toast.present();
       })
     }
     if(usertype =='PDS'){
@@ -65,12 +79,25 @@ export class CrudService {
 
               .catch((error: any) => {
                 loader.dismiss();
-                console.error(error);
+                const toast = this.toastCtrl.create({
+                  message: "Ocorreu um erro na solicitação!",
+                  duration: 5000,
+                  position: 'top',
+                  cssClass:"toastError"
+                  });
+                  toast.present();
               });
           })
       })
       .catch(()=>{
         loader.dismiss();
+        const toast = this.toastCtrl.create({
+          message: "Ocorreu um erro na solicitação!",
+          duration: 5000,
+          position: 'top',
+          cssClass:"toastError"
+          });
+          toast.present();
       })
     }
 
@@ -95,7 +122,13 @@ export class CrudService {
         resolve(dados)
       })
       .catch((erro)=>{
-        console.log(erro.code)
+        const toast = this.toastCtrl.create({
+          message: "Ocorreu um erro na solicitação!",
+          duration: 5000,
+          position: 'top',
+          cssClass:"toastError"
+          });
+          toast.present();
       })
     })
   }
