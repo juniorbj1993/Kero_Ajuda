@@ -13,52 +13,52 @@
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('nome').invalid && this.registerform.get('nome').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                       <ion-input type="text" placeholder="Sobrenome" formControlName="sobrenome"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('sobrenome').invalid && this.registerform.get('sobrenome').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                       <ion-input type="text" placeholder="Data de nascimento" formControlName="datadenascimento" [brmasker]="{mask:'00/00/0000', len:10}"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('datadenascimento').invalid && this.registerform.get('datadenascimento').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                       <ion-input type="tel" placeholder="Telefone" formControlName="telefone" name="telefone" [brmasker]="{mask:'(00)00000-0000', len:14}" ></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('telefone').invalid && this.registerform.get('telefone').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                         <ion-input type="tel" placeholder="CPF" name="cpf" formControlName="cpf" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('cpf').invalid && this.registerform.get('cpf').touched">
                         <p class="form_error">Campo Inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                       <ion-input type="tel" placeholder="RG" formControlName="rg" name="rg"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('rg').invalid && this.registerform.get('rg').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                         <ion-input type="text" placeholder="Nacionalidade" formControlName="nacionalidade"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('nacionalidade').invalid && this.registerform.get('nacionalidade').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
+                    </ion-item>
                     <ion-item>
                         <ion-input type="text" placeholder="Naturalidade" formControlName="naturalidade"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('naturalidade').invalid && this.registerform.get('naturalidade').touched">
                         <p class="form_error">Campo inválido.</p>
-                    </ion-item> 
-                    
-   
-              
+                    </ion-item>
+
+
+
               <ion-card>
                   <ion-item>
                       <ion-label> Estado:</ion-label>
@@ -80,30 +80,30 @@
                   <ion-item *ngIf="this.registerform.get('cidade').invalid">
                       <p class="form_error">Selecione uma cidade.</p>
                   </ion-item>
-    
+
               </ion-card>
               <ion-item>
                 <ion-input type="text" placeholder="Rua" formControlName="rua"></ion-input>
               </ion-item>
               <ion-item *ngIf="this.registerform.get('rua').invalid && this.registerform.get('rua').touched">
                   <p class="form_error">Campo inválido.</p>
-              </ion-item> 
+              </ion-item>
               <ion-item>
                 <ion-input type="number" placeholder="Número da residência" formControlName="numero"></ion-input>
               </ion-item>
               <ion-item *ngIf="this.registerform.get('numero').invalid && this.registerform.get('numero').touched">
                   <p class="form_error">Campo inválido.</p>
-              </ion-item> 
-              
+              </ion-item>
+
               <ion-item>
                   <ion-input type="text" placeholder="Bairro" formControlName="bairro"></ion-input>
               </ion-item>
               <ion-item *ngIf="this.registerform.get('bairro').invalid && this.registerform.get('bairro').touched">
                   <p class="form_error">Campo inválido.</p>
-              </ion-item>             
-                   
-      
-              
+              </ion-item>
+
+
+
             <ion-card>
                 <ion-item>
                     <ion-label> Categoria:</ion-label>
@@ -111,31 +111,31 @@
                         <div *ngFor="let f of categoria">
                             <ion-option value = "{{f}}" >{{f}}</ion-option>
                         </div>
-                        
+
                     </ion-select>
-                   
+
                 </ion-item>
                 <ion-item *ngIf="selected != null">
                         <ion-label> Serviço:</ion-label>
                         <ion-select multiple="false" formControlName="funcao">
-                            
+
                             <div *ngFor="let f of servicos.funcoes">
                                 <div *ngIf="f.categoria == selected">
                                     <ion-option value = "{{f.id}}" >{{f.nome}}</ion-option>
                                 </div>
-                            </div>  
-                           
+                            </div>
+
                         </ion-select>
 
                 </ion-item>
-                
+
                 <ion-item *ngIf="this.registerform.get('funcao').invalid">
                     <p class="form_error">Selecione uma categoria e um serviço.</p>
                 </ion-item>
             </ion-card>
-                         
-            
-                   
+
+
+
               <ion-item>
                 <ion-input type="email" placeholder="Email" formControlName="email"></ion-input>
               </ion-item>
@@ -157,18 +157,21 @@
                 <ion-item *ngIf="this.registerform.get('confirmarsenha').invalid && this.registerform.get('confirmarsenha').touched  && this.registerform.get('confirmarsenha').dirty">
                     <p class="form_error">As senhas não conferem.</p>
                 </ion-item>
-                <re-captcha (resolved)="resolved($event)" siteKey="6LdFapQUAAAAAF3mnxbZvFAoHNbPezUtbPaC1avi"></re-captcha>
+                  <br>
+                  <re-captcha (resolved)="resolved($event)" [siteKey]="sitekeycode"></re-captcha>
+
+
             </ion-list>
             <ion-row class="buttonlogin">
               <ion-col col-12 style="text-align: center">
-                  <button type="submit"  ion-button full [disabled]="this.registerform.invalid||this.captchaok==false">Cadastrar</button>
+                  <button type="submit"  ion-button full [disabled]="this.registerform.invalid||!this.captcha">Cadastrar</button>
               </ion-col>
               <ion-col col-12 style="text-align: center">
                 <p>Ao se cadastrar, você concorda com nossos <a (click)="verTermos()" ><b> Termos e Política de Dados.</b></a></p>
               </ion-col>
             </ion-row>
           </form>
-          
+
         </ion-grid>
       </ion-card-content>
 

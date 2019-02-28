@@ -23,11 +23,12 @@ import { Servicos } from '../../funcoes.model';
   templateUrl: 'cadastro-pds.html',
 })
 export class CadastroPdsPage {
-  
+
 
   registerform: FormGroup;
   selected = null;
-  captchaok: boolean;
+  captcha: boolean = false;
+  sitekeycode = '6LdFapQUAAAAAF3mnxbZvFAoHNbPezUtbPaC1avi'
 
 
 
@@ -175,8 +176,8 @@ selectedCategoria(){
   }
   resolved(captchaResponse: string) {
     console.log(`Resolved captcha with response ${captchaResponse}:`);
-    this.captchaok = true;
-    console.log(this.captchaok)
+    this.captcha = true;
+    console.log(this.captcha)
   }
 
 }
