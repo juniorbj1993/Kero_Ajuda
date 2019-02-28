@@ -99,6 +99,9 @@ export class EditardadosPage {
 
 
   }
+  editarIMG(){
+    console.log('aqui!')
+  }
 
 
 }

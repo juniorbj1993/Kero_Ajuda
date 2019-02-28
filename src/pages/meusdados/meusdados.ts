@@ -27,7 +27,7 @@ export class MeusdadosPage {
   ionViewDidLoad() {
     this.storage.get('userId')
     .then((resposta)=>{
-      this.crud.getListUser(resposta)
+      this.crud.getListPDS(resposta)
       .then((resultado)=>{
         this.listadousuario = resultado
       })

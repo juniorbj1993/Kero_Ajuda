@@ -1,5 +1,4 @@
 export class pds{
-  public img:object;
   public nome:string;
   public sobrenome:string;
   public telefone: string;
@@ -28,7 +27,6 @@ export class pds{
 
 
 export class usuario{
-  public img:object;
   public nome:string;
   public sobrenome:string;
   public telefone: string;

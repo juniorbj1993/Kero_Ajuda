@@ -6,8 +6,21 @@ page-editardados {
   }
   .informativo{
     color: red;
+    
+  }
+  .card_editar{
+    border-radius: 20px;
+
+  }
+  .card_img{
+    width: 50%;
+    border-radius: 20px;
+    align-items: center;
+    margin-left: 25%;
+
+  }
+  .link_trocar_img{
     text-align: center;
   }
-
 
 }

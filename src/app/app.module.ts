@@ -18,6 +18,7 @@ import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepol
 import { Network } from '@ionic-native/network';
 import {ResetarsenhaPageModule} from './../pages/resetarsenha/resetarsenha.module';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { ImagePicker } from '@ionic-native/image-picker/ngx';
 
 
 
@@ -104,7 +105,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ScreenOrientation,
     Servicos,
     Network,
-    networkVerify
+    networkVerify,
+    ImagePicker
   ]
 })
 export class AppModule {}

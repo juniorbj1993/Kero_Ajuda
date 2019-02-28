@@ -16,12 +16,12 @@
       </ion-card-content>
 
   </ion-card>
-    <ion-card>
+    <ion-card class="card_editar">
         <ion-card-content>
           <div *ngIf="this.dados == 'telefone'">
               <form [formGroup]="registerform_telefone" (ngSubmit)="editarDadosOK()">
                 <ion-list>
-                  <ion-item>
+                    <ion-item>
                       <ion-input type="tel" placeholder="Telefone" formControlName="telefone" name="telefone" [brmasker]="{mask:'(00)00000-0000', len:14}" ></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform_telefone.get('telefone').invalid && this.registerform_telefone.get('telefone').touched">
@@ -30,6 +30,18 @@
                 </ion-list>
                 <button type="submit"  ion-button full [disabled]="registerform_telefone.invalid">Editar Dados</button>
               </form>
+          </div>
+          <div *ngIf="this.dados == 'img'">
+            <ion-card class="card_img">
+                <ion-row>
+                    <ion-col>
+                       <img src="../../assets/imgs/semimagem.jpg" alt=""> 
+                    </ion-col>
+                </ion-row> 
+            </ion-card>
+            <ion-item class="link_trocar_img">
+                <a (click)="editarIMG()">Escolher nova foto <ion-icon name="create"></ion-icon></a>
+            </ion-item>           
           </div>
 
 
