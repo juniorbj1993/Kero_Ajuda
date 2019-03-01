@@ -1,5 +1,6 @@
 export class pds{
   public nome:string;
+  public img: string = '../../assets/imgs/semimagem.jpg';
   public sobrenome:string;
   public telefone: string;
   public email: string;

@@ -11,6 +11,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {usuario} from '../../users.model';
 import { TermosepoliticaPage } from '../termosepolitica/termosepolitica';
+import { dadosRecaptcha } from '../../reCaptcha';
 
 
 
@@ -27,6 +28,9 @@ import { TermosepoliticaPage } from '../termosepolitica/termosepolitica';
 export class CadastrousuarioPage {
 
   registerform: FormGroup;
+  selected = null;
+  captcha: boolean = false;
+  sitekeycode = this.reCaptcha.key;
 
 
   constructor(
@@ -38,7 +42,8 @@ export class CadastrousuarioPage {
     public afAuth: AngularFireAuth,
     public db: AngularFireDatabase,
     private dadosUser: usuario,
-    public loadingCtrl: LoadingController
+    public loadingCtrl: LoadingController,
+    private reCaptcha: dadosRecaptcha
 
     ) {
     this.registerform = this.formbuilder.group({
@@ -145,6 +150,9 @@ export class CadastrousuarioPage {
   verTermos(){
     this.navCtrl.push(TermosepoliticaPage);
   }
-
+  resolved(captchaResponse: string) {
+    // console.log(`Resolved captcha with response ${captchaResponse}:`);
+    this.captcha = true;
+  }
 
 }

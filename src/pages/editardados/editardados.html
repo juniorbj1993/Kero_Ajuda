@@ -35,13 +35,16 @@
             <ion-card class="card_img">
                 <ion-row>
                     <ion-col>
-                       <img src="../../assets/imgs/semimagem.jpg" alt=""> 
+                       <img [src]="imagePath" alt="">
                     </ion-col>
-                </ion-row> 
+                </ion-row>
             </ion-card>
             <ion-item class="link_trocar_img">
-                <a (click)="editarIMG()">Escolher nova foto <ion-icon name="create"></ion-icon></a>
-            </ion-item>           
+                <button ion-button (click)="editarIMG()">Escolher nova foto</button>
+            </ion-item>
+            <ion-item class="link_trocar_img">
+                <button ion-button class="btn_confirm"  (click)="enviarFirebase()" [disabled]="!existefoto">Confirmar</button>
+            </ion-item>
           </div>
 
 

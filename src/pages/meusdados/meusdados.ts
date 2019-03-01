@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { EditardadosPage } from '../editardados/editardados';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Storage } from '@ionic/storage';
-import { usuario } from '../../users.model';
+import { pds } from '../../users.model';
 
 @IonicPage()
 @Component({
@@ -13,7 +13,7 @@ import { usuario } from '../../users.model';
 })
 export class MeusdadosPage {
   dadosusuario: any
-  listadousuario: Array<usuario>
+  listadousuario: Array<pds>
   public usuario = 'PDS'
 
   constructor(public navCtrl: NavController,

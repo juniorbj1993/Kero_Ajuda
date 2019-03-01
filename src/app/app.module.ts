@@ -1,4 +1,3 @@
-
 //modulos
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -18,7 +17,7 @@ import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepol
 import { Network } from '@ionic-native/network';
 import {ResetarsenhaPageModule} from './../pages/resetarsenha/resetarsenha.module';
 import { RecaptchaModule } from 'ng-recaptcha';
-import { ImagePicker } from '@ionic-native/image-picker/ngx';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 
 
@@ -26,6 +25,8 @@ import { ImagePicker } from '@ionic-native/image-picker/ngx';
 import {usuario} from '../users.model';
 import {pds} from '../users.model';
 import { Servicos } from './../funcoes.model';
+import { dadosRecaptcha } from './../reCaptcha';
+
 
 //serviços
 import {networkVerify} from '../network.service'
@@ -106,7 +107,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     Servicos,
     Network,
     networkVerify,
-    ImagePicker
+    ImagePicker,
+    dadosRecaptcha
   ]
 })
 export class AppModule {}

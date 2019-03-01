@@ -12,7 +12,7 @@
       <div *ngIf="pds.funcao === servico" >
           <ion-item (click)="detalharPds(pds)">
             <ion-avatar item-start>
-              <img src="../../../assets/imgs/keroajuda/jb_avatar.png">
+              <img [src]="pds.img">
             </ion-avatar>
             <h2>{{pds.nome}}</h2>
             <h3>{{pds.funcao}}</h3>

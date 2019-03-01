@@ -86,8 +86,8 @@
     <plugin name="cordova-plugin-camera" spec="4.0.3" />
     <plugin name="cordova-plugin-screen-orientation" spec="3.0.1" />
     <plugin name="cordova-plugin-network-information" spec="2.0.1" />
-    <engine name="android" spec="7.1.4" />
     <plugin name="cordova-plugin-telerik-imagepicker" spec="2.2.2">
-        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="your usage message" />
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="image add" />
     </plugin>
+    <engine name="android" spec="7.1.4" />
 </widget>

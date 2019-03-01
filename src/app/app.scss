@@ -25,6 +25,14 @@
     text-align: center;
   }
 }
+.toastOK {
+  .toast-wrapper {
+    background: rgb(40, 126, 0);
+    opacity: 0.8;
+    border-radius: 5px;
+    text-align: center;
+  }
+}
 .confirmacao_conta{
   color: rgb(0, 0, 0) !important;
   background-image: url('../../assets/imgs/logo_solta.png');

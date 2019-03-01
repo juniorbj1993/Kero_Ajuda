@@ -34,7 +34,7 @@ export class MyApp {
     public toastCtrl: ToastController
 
     ) {
-    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.initializeApp();
 
     // used for an example of ngFor and navigation

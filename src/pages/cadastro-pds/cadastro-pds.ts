@@ -12,6 +12,8 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {pds} from '../../users.model';
 
+import {dadosRecaptcha} from '../../reCaptcha'
+
 //para cadastrar servicos utiliza o model para o APP todo
 import { Servicos } from '../../funcoes.model';
 
@@ -28,7 +30,7 @@ export class CadastroPdsPage {
   registerform: FormGroup;
   selected = null;
   captcha: boolean = false;
-  sitekeycode = '6LdFapQUAAAAAF3mnxbZvFAoHNbPezUtbPaC1avi'
+  sitekeycode = this.reCaptcha.key;
 
 
 
@@ -42,7 +44,8 @@ export class CadastroPdsPage {
     public db: AngularFireDatabase,
     private dadosPDS: pds,
     public loadingCtrl: LoadingController,
-    public servicos: Servicos
+    public servicos: Servicos,
+    private reCaptcha: dadosRecaptcha
 
     ) {
 
@@ -175,9 +178,8 @@ selectedCategoria(){
     this.navCtrl.push(TermosepoliticaPage);
   }
   resolved(captchaResponse: string) {
-    console.log(`Resolved captcha with response ${captchaResponse}:`);
+    // console.log(`Resolved captcha with response ${captchaResponse}:`);
     this.captcha = true;
-    console.log(this.captcha)
   }
 
 }

@@ -1,3 +1,4 @@
+import { ImagePicker } from '@ionic-native/image-picker';
 import { CrudService } from './../../crud.service';
 import { Storage } from '@ionic/storage';
 import { Component } from '@angular/core';
@@ -16,6 +17,9 @@ export class EditardadosPage {
   public id: string;
   public dataobjectedit;
   public usuariotype;
+  public existefoto = false;
+  public imagePath = '../../assets/imgs/semimagem.jpg';
+  public filetoupload = null;
 
   registerform_nome: FormGroup;
   registerform_telefone: FormGroup;
@@ -37,6 +41,7 @@ export class EditardadosPage {
     private crud: CrudService,
     private storage: Storage,
     public formbuilder: FormBuilder,
+    private imagepicker: ImagePicker
 
     ) {
       this.registerform_nome = this.formbuilder.group({
@@ -100,7 +105,62 @@ export class EditardadosPage {
 
   }
   editarIMG(){
-    console.log('aqui!')
+    this.imagepicker.hasReadPermission()
+      .then(hasPermission=>{
+        if(hasPermission){
+          this.pegarImagem()
+        }else{
+          this.solicitarPermissao()
+        }
+
+      })
+      .catch((error)=>{
+        console.error(error)
+      })
+
+  }
+  solicitarPermissao(){
+    this.imagepicker.requestReadPermission()
+      .then((hasPermission)=>{
+        if(hasPermission){
+          this.pegarImagem()
+        }else{
+          console.log("n permitido")
+        }
+
+      })
+      .catch((error)=>{
+        console.error(error)
+      })
+  }
+  pegarImagem(){
+    this.imagepicker.getPictures({
+      width: 540,
+      height: 540,
+      maximumImagesCount: 1,
+      outputType: 1, // base 64
+      quality: 100
+    })
+      .then((result)=>{
+        if(result.length>0){
+          this.imagePath = `data:image/png;base64,${result}`;
+          this.filetoupload = this.imagePath;
+          this.existefoto = true;
+        }else{
+          this.imagePath = '../../assets/imgs/semimagem.jpg';
+          this.filetoupload = null;
+        }
+
+      })
+      .catch((error)=>{
+        console.error("erro ao recuperar imagem")
+      })
+
+  }
+
+
+  enviarFirebase(){
+    this.crud.uploadandSaveImage(this.dadousuarioID,this.filetoupload);
   }
 
 

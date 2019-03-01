@@ -7,8 +7,8 @@ import * as firebase from 'firebase'
 @Injectable()
 export class CrudService {
   keydadosuser: string;
-  
-  
+
+
 
   constructor(
     private db: AngularFireDatabase,
@@ -17,7 +17,7 @@ export class CrudService {
     public toastCtrl: ToastController,
     private fb: FirebaseApp
     ) {
-      
+
      }
 
   // insert(dado: string) {
@@ -170,22 +170,36 @@ export class CrudService {
   // delete(key: string) {
   //   this.db.object(`contato/${key}`).remove();
   // }
+
   uploadandSaveImage(iduser: string, img:any){
-    let storageRef = this.fb.storage().ref(`UserData/${iduser}`)
-    let basePath = '.png'
-    let uploadtask = storageRef.child(basePath).putString(img, 'base64')
-    uploadtask.on(firebase.storage.TaskEvent.STATE_CHANGED,(snapshot)=>{
-      var progress = (snapshot);
-      console.log(progress)
+    let storageRef = this.fb.storage().ref()
+    let uploadtask = storageRef.child(`userImg/${iduser}`).putString(img, 'data_url')
+    uploadtask.on(firebase.storage.TaskEvent.STATE_CHANGED,(snapshot: any)=>{
+      const toast = this.toastCtrl.create({
+        message: "Fazendo upload da imagem, aguarde...",
+        duration: 3000,
+        position: 'top',
+        cssClass:"toastOK"
+        });
+        toast.present();
     },(error)=>{
-      console.error(error)
+      const toast = this.toastCtrl.create({
+        message: "Ocorreu um erro!",
+        duration: 5000,
+        position: 'top',
+        cssClass:"toastError"
+        });
+        toast.present();
     },()=>{
-      console.log(uploadtask.snapshot.downloadURL)
+      let url = uploadtask.snapshot.downloadURL;
+      let userType = 'PDS';
+      let dado = {
+        img: url
+      }
+      this.update(iduser,dado,userType);
     })
 
   }
-  updateImage(){}
-  readImage(){}
-  deleteImage(){}
+
 
 }
