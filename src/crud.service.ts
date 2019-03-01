@@ -178,7 +178,7 @@ export class CrudService {
       const toast = this.toastCtrl.create({
         message: "Fazendo upload da imagem, aguarde...",
         duration: 3000,
-        position: 'top',
+        position: 'bottom',
         cssClass:"toastOK"
         });
         toast.present();
