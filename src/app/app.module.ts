@@ -14,10 +14,10 @@ import { SobrePageModule } from './../pages/sobre/sobre.module';
 import { ScreenOrientation } from '@ionic-native/screen-orientation';
 import { BrMaskerModule } from 'brmasker-ionic-3';
 import { TermosepoliticaPageModule } from './../pages/termosepolitica/termosepolitica.module';
-import { Network } from '@ionic-native/network';
 import {ResetarsenhaPageModule} from './../pages/resetarsenha/resetarsenha.module';
-import { RecaptchaModule } from 'ng-recaptcha';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { RecaptchaModule } from 'ng-recaptcha';
+
 
 
 
@@ -29,7 +29,7 @@ import { dadosRecaptcha } from './../reCaptcha';
 
 
 //serviços
-import {networkVerify} from '../network.service'
+
 
 
 
@@ -75,7 +75,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrMaskerModule,
     TermosepoliticaPageModule,
     ResetarsenhaPageModule,
-    RecaptchaModule.forRoot(),
+    RecaptchaModule.forRoot()
 
 
 
@@ -105,8 +105,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     pds,
     ScreenOrientation,
     Servicos,
-    Network,
-    networkVerify,
     ImagePicker,
     dadosRecaptcha
   ]

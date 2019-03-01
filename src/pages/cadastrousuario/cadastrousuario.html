@@ -114,7 +114,7 @@
                 <ion-item *ngIf="this.registerform.get('confirmarsenha').invalid && this.registerform.get('confirmarsenha').touched  && this.registerform.get('confirmarsenha').dirty">
                     <p class="form_error">As senhas não conferem.</p>
                 </ion-item>
-
+                <br>
                 <re-captcha (resolved)="resolved($event)" [siteKey]="sitekeycode"></re-captcha>
               </ion-list>
               <ion-row class="buttonlogin">

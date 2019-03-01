@@ -178,8 +178,12 @@ selectedCategoria(){
     this.navCtrl.push(TermosepoliticaPage);
   }
   resolved(captchaResponse: string) {
-    // console.log(`Resolved captcha with response ${captchaResponse}:`);
-    this.captcha = true;
+    if(captchaResponse == null){
+      this.captcha = false;
+    }
+    if(captchaResponse != null){
+      this.captcha = true;
+    }
   }
 
 }
