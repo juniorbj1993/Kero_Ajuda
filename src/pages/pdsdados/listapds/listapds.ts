@@ -12,8 +12,8 @@ import { DetalhepdsPage } from '../detalhepds/detalhepds';
 })
 export class ListapdsPage {
   servico: string
-  pds_dados: Array<object>
-  dadosfiltrados: Array<object>;
+  pds_dados: Array<pds>
+  dadosfiltrados: Array<pds>;
   searchQueryCidade = '';
   searchQueryBairro = '';
 
@@ -45,6 +45,8 @@ export class ListapdsPage {
   }
   searchBairro(ev){
 
+    this.initializeItems();
+
     // set val to the value of the ev target
     let val = ev.target.value;
 
@@ -55,22 +57,18 @@ export class ListapdsPage {
       })
     }
   }
-  searchCidade(ev){
-      // set val to the value of the ev target
-    let val = ev.target.value;
+  // searchCidade(ev){
+  //     // set val to the value of the ev target
+  //   let val = ev.target.value;
 
-    // if the value is an empty string don't filter the items
-    if (val && val.trim() != '') {
-      this.dadosfiltrados = this.dadosfiltrados.filter((item) => {
-        return (item.cidade.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-  }
-  resetarPesquisa(){
-    this.initializeItems();
-    this.searchQueryCidade = '';
-    this.searchQueryBairro = '';
-  }
+  //   // if the value is an empty string don't filter the items
+  //   if (val && val.trim() != '') {
+  //     this.dadosfiltrados = this.dadosfiltrados.filter((item) => {
+  //       return (item.cidade.toLowerCase().indexOf(val.toLowerCase()) > -1);
+  //     })
+  //   }
+  // }
+
 
 
 }

@@ -8,11 +8,8 @@
 
 
 <ion-content padding>
-  <ion-card>
-      <ion-searchbar  [(ngModel)]="searchQueryCidade" (ionInput)="searchCidade($event)" placeholder="Pesquisar por cidade"></ion-searchbar>
-      <ion-searchbar [(ngModel)]="searchQueryBairro" (ionInput)="searchBairro($event)" placeholder="Pesquisar por bairro"></ion-searchbar>
-      <button ion-button full (click)="resetarPesquisa()" >Resetar pesquisa</button>
-  </ion-card>
+      <!-- <ion-searchbar  [(ngModel)]="searchQueryCidade" (ionInput)="searchCidade($event)" placeholder="Pesquisar por cidade"></ion-searchbar> -->
+      <ion-searchbar class="searchbar" [(ngModel)]="searchQueryBairro" (ionInput)="searchBairro($event)" placeholder="Pesquisar por bairro"></ion-searchbar>
 
     <ion-list *ngFor="let pds of this.dadosfiltrados" >
       <div *ngIf="pds.funcao === servico" >
