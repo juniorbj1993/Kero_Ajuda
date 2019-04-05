@@ -1,6 +1,11 @@
 page-detalhepds {
+  .content-md {
+    color: #000;
+    background-color: #dcdcdc;
+}
+
   .arrowreturn{
-    color:#123879;
+    color:#45597c;
     margin-bottom: 15px;
   }
   .bar-button-default-md{
@@ -18,10 +23,11 @@ page-detalhepds {
     color: #000000;
     text-align: center;
   }
-  
-  
+
+
   .card-md{
     border-radius: 20px;
+    background: #ffffffc7;
   }
   img{
     width: 100%;
@@ -35,8 +41,8 @@ page-detalhepds {
       color:#123879;
       font-size: 20px;
   }
-  
-  
+
+
   .button-md{
     border-radius: 30px;
     background-color: #00e676;

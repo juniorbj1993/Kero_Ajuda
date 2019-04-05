@@ -3,7 +3,15 @@ page-detalheservico {
     .servicos_ofertados{
         padding: 10px;
     }
-
+    .content-md {
+      color: #000;
+      background-color: #dcdcdc;
+  }
+  .item-md {
+    background-color: #ffffffba;
+    border-radius: 10px;
+    box-shadow: 5px 5px 12px 0px #909090;
+  }
   // .fixed-content{
   //   background-position: 50%;
   //   background-image: url('../../assets/imgs/logo_kero_ajuda.png');
