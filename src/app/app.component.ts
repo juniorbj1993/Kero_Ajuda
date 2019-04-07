@@ -5,7 +5,6 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { LoginPage } from '../pages/login/login';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
@@ -34,7 +33,7 @@ export class MyApp {
     public toastCtrl: ToastController
 
     ) {
-    // this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -52,11 +51,11 @@ export class MyApp {
             this.rootPage = ConfiguracoesPage;
           }
           else{
-            this.rootPage = LoginPage;
+            this.rootPage = 'LoginPage';
           }
         })
         .catch(()=>{
-          this.rootPage = LoginPage;
+          this.rootPage = 'LoginPage';
         })
       this.statusBar.styleDefault();
       this.splashScreen.hide();

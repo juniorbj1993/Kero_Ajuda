@@ -36,7 +36,6 @@ import { dadosRecaptcha } from './../reCaptcha';
 
 //pages
 import { MyApp } from './app.component';
-import { LoginPage } from './../pages/login/login';
 import { CadastrousuarioPage } from '../pages/cadastrousuario/cadastrousuario';
 import { CadastroPdsPage } from '../pages/cadastro-pds/cadastro-pds';
 import { HomePage } from '../pages/home/home';
@@ -60,7 +59,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage,
     CadastrousuarioPage,
     CadastroPdsPage
   ],
@@ -83,7 +81,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage,
     CadastrousuarioPage,
     CadastroPdsPage,
     HomePage,
