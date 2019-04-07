@@ -8,6 +8,7 @@ import { environment } from './../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import {AngularFireAuth} from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import {LoginPageModule} from '../pages/login/login.module';
 import { HomePageModule } from '../pages/home/home.module';
 import { HomepdsPageModule } from '../pages/homepds/homepds.module';
 import { SobrePageModule } from './../pages/sobre/sobre.module';
@@ -43,6 +44,7 @@ import { HomepdsPage } from './../pages/homepds/homepds';
 import { SobrePage } from '../pages/sobre/sobre';
 import { TermosepoliticaPage } from './../pages/termosepolitica/termosepolitica';
 import { ResetarsenhaPage } from '../pages/resetarsenha/resetarsenha';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -50,6 +52,7 @@ import { ResetarsenhaPage } from '../pages/resetarsenha/resetarsenha';
 //outros
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 
 
@@ -73,7 +76,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     BrMaskerModule,
     TermosepoliticaPageModule,
     ResetarsenhaPageModule,
-    RecaptchaModule.forRoot()
+    RecaptchaModule.forRoot(),
+    LoginPageModule
 
 
 
@@ -87,7 +91,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomepdsPage,
     SobrePage,
     TermosepoliticaPage,
-    ResetarsenhaPage
+    ResetarsenhaPage,
+    LoginPage
 
 
   ],

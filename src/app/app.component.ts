@@ -8,6 +8,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Storage } from '@ionic/storage';
 import { ToastController } from 'ionic-angular';
 import { LoadingController } from 'ionic-angular';
+import { LoginPage } from '../pages/login/login';
 
 
 
@@ -51,11 +52,11 @@ export class MyApp {
             this.rootPage = ConfiguracoesPage;
           }
           else{
-            this.rootPage = 'LoginPage';
+            this.rootPage = LoginPage;
           }
         })
         .catch(()=>{
-          this.rootPage = 'LoginPage';
+          this.rootPage = LoginPage;
         })
       this.statusBar.styleDefault();
       this.splashScreen.hide();
