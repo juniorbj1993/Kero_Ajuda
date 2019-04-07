@@ -1,3 +1,0 @@
-KEYSTORE = Keroajudaapp_KEYSTORE
-KEY = KeroajudaappKEY
-senha = keroajuda@caixamagica
