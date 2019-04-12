@@ -115,6 +115,32 @@ export class CrudService {
 
 
   }
+  // getListCPFUsers(cpf: string): Promise<any>{
+  //   return new Promise((resolve, reject)=>{
+  //     this.db.database.ref(`PdsData`)
+  //     .once('value')
+  //     .then((snapshot: any)=>{
+  //       let dados: boolean = false;
+  //       snapshot.forEach((childSnapshot: any)=>{
+  //           let dadosUsuario = childSnapshot.val()
+  //           console.log(dadosUsuario)
+  //           // dados = true
+  //       })
+  //       resolve(dados)
+  //     })
+  //     .catch((erro)=>{
+  //       const toast = this.toastCtrl.create({
+  //         message: "Ocorreu um erro na solicitação!",
+  //         duration: 5000,
+  //         position: 'top',
+  //         cssClass:"toastError"
+  //         });
+  //         toast.present();
+  //     })
+
+  //   })
+
+  // }
 
   getListUser(iduser: string): Promise<any>{
     return new Promise((resolve, reject)=>{

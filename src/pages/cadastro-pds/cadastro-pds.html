@@ -33,7 +33,7 @@
                         <p class="form_error">Campo inválido.</p>
                     </ion-item>
                     <ion-item>
-                        <ion-input type="tel" placeholder="CPF" name="cpf" formControlName="cpf" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
+                        <ion-input type="tel" placeholder="CPF" name="cpf" (ionChange)="verificarAutenticidadedeCPF()" formControlName="cpf" name="cpf" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
                     </ion-item>
                     <ion-item *ngIf="this.registerform.get('cpf').invalid && this.registerform.get('cpf').touched">
                         <p class="form_error">Campo Inválido.</p>

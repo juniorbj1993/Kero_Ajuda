@@ -16,6 +16,7 @@ import {dadosRecaptcha} from '../../reCaptcha';
 
 //para cadastrar servicos utiliza o model para o APP todo
 import { Servicos } from '../../funcoes.model';
+import {CrudService} from '../../crud.service'
 
 
 
@@ -45,7 +46,8 @@ export class CadastroPdsPage {
     private dadosPDS: pds,
     public loadingCtrl: LoadingController,
     public servicos: Servicos,
-    private reCaptcha: dadosRecaptcha
+    private reCaptcha: dadosRecaptcha,
+    private crud: CrudService
 
     ) {
 
@@ -187,7 +189,7 @@ selectedCategoria(){
   }
 
   verificarAutenticidadedeCPF(){
-    
+    // this.crud.getListCPFUsers(this.registerform.value.cpf)
   }
 
 }
