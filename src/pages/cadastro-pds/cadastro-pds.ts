@@ -12,7 +12,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
 import {pds} from '../../users.model';
 
-import {dadosRecaptcha} from '../../reCaptcha'
+import {dadosRecaptcha} from '../../reCaptcha';
 
 //para cadastrar servicos utiliza o model para o APP todo
 import { Servicos } from '../../funcoes.model';
@@ -184,6 +184,10 @@ selectedCategoria(){
     if(captchaResponse != null){
       this.captcha = true;
     }
+  }
+
+  verificarAutenticidadedeCPF(){
+    
   }
 
 }
