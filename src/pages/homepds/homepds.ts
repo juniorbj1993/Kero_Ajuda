@@ -11,9 +11,14 @@ import { pds } from './../../users.model';
   templateUrl: 'homepds.html',
 })
 export class HomepdsPage {
+
   public dadosusuario: Array <pds> = []
   Uid: string
   star: Array<object>;
+  creditos: Array<object> = [{
+    tel: '(88)99804-8587',
+    creditos: '10'
+  }];
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private storage: Storage,

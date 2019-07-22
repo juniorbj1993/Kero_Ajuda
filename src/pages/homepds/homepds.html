@@ -15,6 +15,26 @@
 <ion-content padding>
 
     <ion-slides pager class="slides">
+            <ion-slide class="credito-bg">
+                <div *ngFor="let credito of creditos">
+
+                  <div>
+                    <br>
+                    <h3 style="font-family: 'Times New Roman', Times, serif; color: #45597c;">Seus <b style=" font-size: 40px">KA</b>Créditos = <b style="color: #45597c"> {{credito.creditos}}</b> <img class="creditos" src="../../assets/imgs/logo_solta.png" alt=""> </h3>
+                    <h4 style="font-family: 'Times New Roman', Times, serif; color: rgb(187, 62, 62);">Você estará visível para usuários até confirmar <b style="color: #45597c"> {{credito.creditos}}</b> solicitações de serviços.</h4>
+                  </div>
+                </div>
+                <br>
+                <ion-card>
+                  <h2 style="font-family: 'Times New Roman', Times, serif">O que é KA crédito?</h2>
+                  <h3 style="font-family: 'Times New Roman', Times, serif"> KA créditos representa a quantidades de serviços que podem ser aceitos pelo Prestador de Serviço(PDS), quando esses pontos chegarem a <b style="color: red">0(zero)</b> o nome do PDS e as informações não estarão mais visíveis para que o cliente possa entrar em contato, e somente com a compra de novos créditos no nosso site que o PDS estará visível para que possa disponibilizar seus serviços novamente. </h3>
+                </ion-card>
+                <div>
+                  <h3 style="font-family: 'Times New Roman', Times, serif;color: #45597c">Para comprar novos créditos</h3>
+                  <button ion-button round>CLIQUE AQUI</button>
+                </div>
+
+            </ion-slide>
             <ion-slide *ngFor="let slide of slides">
                     <img [src]="slide.image" class="slide-image"/>
                     <h2 class="slide-title" [innerHTML]="slide.title"></h2>
