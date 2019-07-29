@@ -3,7 +3,7 @@
     <ion-grid class="arrowreturn">
         <h5  navPop><ion-icon name="md-arrow-back">  Voltar</ion-icon></h5>
     </ion-grid>
-    <ion-card >
+    <ion-card class="card_bg">
         <ion-card-content *ngFor="let U of dados_pds">
             <ion-row>
                 <ion-col col-6>
@@ -13,10 +13,16 @@
                 </ion-col>
             </ion-row>
 
+            <div class="divisor"></div>
+            
+            
             <h2>Nome completo:</h2>
             <h4>{{U.nome}} {{U.sobrenome}}</h4>
-            <h2>Função:</h2>
-            <h4>{{U.funcao}}</h4>
+            <div class="funcao">
+                <h2 class="funcao_text">Função:</h2>
+                <h4 class="funcao_text">{{U.funcao}}</h4>
+            </div>
+            
             <h2>Classificação:</h2>
             <ion-row>
                 <ion-col col-4><h3>Ótimo <ion-icon name="star"></ion-icon> = {{U.estrelas.otimo}}</h3></ion-col>
@@ -27,7 +33,7 @@
             <div class="solicitar_servico_classificacao">
                 <h2>Solicitar Serviço</h2>
                 <button class="button_whats" ion-button (click)="irParaWhats(U.telefone)">
-                    <ion-icon name="logo-whatsapp"></ion-icon>Entrar em contato
+                    <ion-icon name="logo-whatsapp"></ion-icon>  Entrar em contato
                 </button>
             </div>
 

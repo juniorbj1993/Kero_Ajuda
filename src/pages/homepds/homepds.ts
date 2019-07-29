@@ -15,7 +15,7 @@ export class HomepdsPage {
   public dadosusuario: Array <pds> = []
   Uid: string
   star: Array<object>;
-  creditos: Array<object> = [{
+  creditos: Array<any> = [{
     tel: '(88)99804-8587',
     creditos: '10'
   }];
